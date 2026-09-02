@@ -9,6 +9,8 @@
 </tr>
 </table>
 
+<img src="https://skillicons.dev/icons?i=ts,js,react,nodejs,python,r,php,mysql,html,css,tailwind,git,github,vercel,figma,vscode&theme=light&perline=16" alt="typescript, javascript, react, node, python, r, php, mysql, html, css, tailwind, git, github, vercel, figma, vscode">
+
 </div>
 
 ## what i actually do
@@ -72,20 +74,17 @@ cleanit started at a canu and kahanee design lab, was developed further at shad,
 <td valign="top"><img src="./assets/langs.svg" width="440" alt="language distribution across public repositories"></td>
 <td valign="top">
 <img src="https://github-readme-streak-stats.herokuapp.com/?user=huznot&hide_border=true&background=00000000&stroke=C2D2E0&ring=C0562F&fire=C0562F&currStreakLabel=C0562F&sideLabels=4A6076&currStreakNum=173A5E&sideNums=173A5E&dates=8A99A8&border_radius=4" width="440" alt="streak stats">
-<br>
-<img src="https://github-profile-trophy.vercel.app/?username=huznot&theme=flat&no-frame=true&no-bg=true&column=3&row=2&margin-w=6&margin-h=6" width="440" alt="github trophies">
 </td>
 </tr>
 </table>
 
 </div>
 
-the contribution plate and the language plate are generated from the github api by [a workflow in this repo](.github/workflows/stats.yml) and committed as svgs, so they render in the same style as everything else here and do not break when someone else's server goes down.
 
 ## reach me
 
 [![email](https://img.shields.io/badge/email-huznot%40gmail.com-C0562F?style=for-the-badge&labelColor=173A5E)](mailto:huznot@gmail.com)
 [![github](https://img.shields.io/badge/github-huznot-173A5E?style=for-the-badge&labelColor=173A5E)](https://github.com/huznot)
-[![linkedin](https://img.shields.io/badge/linkedin-connect-173A5E?style=for-the-badge&labelColor=173A5E)](https://www.linkedin.com/in/YOUR-LINKEDIN-HERE)
+[![linkedin](https://img.shields.io/badge/linkedin-connect-173A5E?style=for-the-badge&labelColor=173A5E)](https://www.linkedin.com/in/muhammad-huzaifa-irfan-593ab629b/)
 
 <sub>winnipeg, manitoba · treaty 1 territory</sub>
