@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 400" width="440" height="400" role="img" aria-label="icd crosswalk f1 results, prior pipeline versus this work">
+<style>
+  svg{--paper:#f7f5ed;--grid:#d8e2ec;--major:#c2d2e0;--ink:#173a5e;--ink2:#4a6076;--pencil:#8a99a8;--margin:#d98b8b;--accent:#c0562f;--base:#93a6b5}
+  @media (prefers-color-scheme:dark){
+    svg{--paper:#0a2239;--grid:#12385c;--major:#1b4a75;--ink:#eaf4ff;--ink2:#a9c9e2;--pencil:#6f92ac;--margin:#3f7fb0;--accent:#f0a868;--base:#456f92}
+  }
+  .paper{fill:var(--paper)}.gl{stroke:var(--grid);stroke-width:1}.gm{stroke:var(--major);stroke-width:1}
+  .ml{stroke:var(--margin);stroke-width:1.3}
+  .ink{fill:var(--ink)}.ink2{fill:var(--ink2)}.pen{fill:var(--pencil)}.acc{fill:var(--accent)}
+  .mono{font-family:ui-monospace,SFMono-Regular,"SF Mono",Consolas,"Liberation Mono",Menlo,monospace}
+  .hand{font-family:"Segoe Print","Bradley Hand","Comic Sans MS",cursive}
+  .base{fill:var(--base);opacity:.65}
+  .new{fill:var(--accent);opacity:.9}
+  .u{fill:none;stroke:var(--accent);stroke-width:2;stroke-dasharray:170;stroke-dashoffset:170;animation:dr 1.1s ease-out .3s forwards}
+  .arr{fill:none;stroke:var(--accent);stroke-width:1.6;stroke-dasharray:70;stroke-dashoffset:70;animation:dr .8s ease-out 2.4s forwards}
+  @keyframes dr{to{stroke-dashoffset:0}}
+  @keyframes fade{to{opacity:1}}
+  .row{opacity:0;animation:fade .5s ease-out forwards}
+</style>
+<defs>
+  <pattern id="f3" width="18" height="18" patternUnits="userSpaceOnUse"><path d="M18 0H0V18" class="gl" fill="none"/></pattern>
+  <pattern id="b3" width="90" height="90" patternUnits="userSpaceOnUse"><path d="M90 0H0V90" class="gm" fill="none"/></pattern>
+</defs>
+<rect class="paper" width="440" height="400"/>
+<rect width="440" height="400" fill="url(#f3)"/><rect width="440" height="400" fill="url(#b3)"/>
+<rect x="0" y="0" width="440" height="400" fill="none" class="gm" stroke-width="2"/>
+<line x1="34" y1="0" x2="34" y2="400" class="ml"/>
+
+<text x="46" y="34" class="mono ink" font-size="16" font-weight="700">icd crosswalk · f1</text>
+<path class="u" d="M46 42 H208"/>
+<text x="336" y="34" class="mono pen" font-size="11">fig. 3</text>
+<text x="46" y="58" class="mono pen" font-size="10.5">mapping legacy diagnosis codes to modern ones</text>
+
+<g transform="translate(80,92)">
+  <line x1="0" y1="0" x2="0" y2="176" class="gm" stroke-width="1.4"/>
+  <line x1="0" y1="176" x2="308" y2="176" class="gm" stroke-width="1.4"/>
+  <g class="mono pen" font-size="10">
+    <text x="-30" y="180">0.0</text><text x="-30" y="136">0.2</text><text x="-30" y="92">0.4</text>
+    <text x="-30" y="48">0.6</text><text x="-30" y="8">0.8</text>
+  </g>
+  <line x1="0" y1="132" x2="308" y2="132" class="gl" stroke-dasharray="3 4"/>
+  <line x1="0" y1="88" x2="308" y2="88" class="gl" stroke-dasharray="3 4"/>
+  <line x1="0" y1="44" x2="308" y2="44" class="gl" stroke-dasharray="3 4"/>
+  <line x1="0" y1="4" x2="308" y2="4" class="gl" stroke-dasharray="3 4"/>
+
+  <rect x="36" y="176" width="40" height="0" class="base"><animate attributeName="height" from="0" to="93" dur="1s" begin=".5s" fill="freeze"/><animate attributeName="y" from="176" to="83" dur="1s" begin=".5s" fill="freeze"/></rect>
+  <rect x="84" y="176" width="40" height="0" class="new"><animate attributeName="height" from="0" to="115" dur="1s" begin=".75s" fill="freeze"/><animate attributeName="y" from="176" to="61" dur="1s" begin=".75s" fill="freeze"/></rect>
+  <text x="41" y="77" class="mono pen row" font-size="11" style="animation-delay:1.5s">.423</text>
+  <text x="88" y="55" class="mono acc row" font-size="11.5" font-weight="700" style="animation-delay:1.7s">.524</text>
+  <text x="20" y="194" class="mono ink2" font-size="10">icd-9-cm → icd-10-ca</text>
+
+  <rect x="188" y="176" width="40" height="0" class="base"><animate attributeName="height" from="0" to="158" dur="1s" begin="1s" fill="freeze"/><animate attributeName="y" from="176" to="18" dur="1s" begin="1s" fill="freeze"/></rect>
+  <rect x="236" y="176" width="40" height="0" class="new"><animate attributeName="height" from="0" to="167" dur="1s" begin="1.25s" fill="freeze"/><animate attributeName="y" from="176" to="9" dur="1s" begin="1.25s" fill="freeze"/></rect>
+  <text x="193" y="12" class="mono pen row" font-size="11" style="animation-delay:2s">.716</text>
+  <text x="240" y="3" class="mono acc row" font-size="11.5" font-weight="700" style="animation-delay:2.2s">.761</text>
+  <text x="178" y="194" class="mono ink2" font-size="10">icd-9-cm → icda-8</text>
+</g>
+
+<g transform="translate(80,330)">
+  <rect x="0" y="0" width="12" height="12" class="base"/><text x="18" y="10.5" class="mono ink2" font-size="11">prior pipeline</text>
+  <rect x="128" y="0" width="12" height="12" class="new"/><text x="146" y="10.5" class="mono ink2" font-size="11">this work</text>
+</g>
+<path class="arr" d="M300 358 C 288 344, 278 328, 268 306"/>
+<text x="238" y="380" class="hand pen" font-size="12">+24% f1 · n = 354 codes</text>
+</svg>

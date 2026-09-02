@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 264" width="900" height="264" role="img" aria-label="muhammad irfan - environmental data, applied ml, game dev">
+<style>
+  svg{--paper:#f7f5ed;--grid:#d8e2ec;--major:#c2d2e0;--ink:#173a5e;--ink2:#4a6076;--pencil:#8a99a8;--margin:#d98b8b;--accent:#c0562f}
+  @media (prefers-color-scheme:dark){
+    svg{--paper:#0a2239;--grid:#12385c;--major:#1b4a75;--ink:#eaf4ff;--ink2:#a9c9e2;--pencil:#6f92ac;--margin:#3f7fb0;--accent:#f0a868}
+  }
+  .paper{fill:var(--paper)}
+  .gl{stroke:var(--grid);stroke-width:1}
+  .gm{stroke:var(--major);stroke-width:1}
+  .ml{stroke:var(--margin);stroke-width:1.4}
+  .ink{fill:var(--ink)}
+  .ink2{fill:var(--ink2)}
+  .pen{fill:var(--pencil)}
+  .acc{fill:var(--accent)}
+  .accs{stroke:var(--accent)}
+  .mono{font-family:ui-monospace,SFMono-Regular,"SF Mono",Consolas,"Liberation Mono",Menlo,monospace}
+  .hand{font-family:"Segoe Print","Bradley Hand","Comic Sans MS",cursive}
+  .draw{fill:none;stroke:var(--ink);stroke-width:1.15;stroke-linejoin:round;
+        stroke-dasharray:1400;stroke-dashoffset:1400;animation:draw 2.2s ease-out .15s forwards}
+  .fillin{fill:var(--ink);opacity:0;animation:fade .9s ease-out 1.9s forwards}
+  .rise{opacity:0;animation:fade .7s ease-out forwards}
+  .d1{animation-delay:2.3s}.d2{animation-delay:2.6s}.d3{animation-delay:3.2s}.d4{animation-delay:.4s}
+  @keyframes draw{to{stroke-dashoffset:0}}
+  @keyframes fade{to{opacity:1}}
+  @keyframes blink{0%,45%{opacity:1}46%,100%{opacity:0}}
+  .caret{fill:var(--accent);animation:blink 1s steps(1) infinite}
+  .trace{fill:none;stroke:var(--accent);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;
+         stroke-dasharray:340;stroke-dashoffset:340;animation:draw 2.4s ease-in-out 2.2s forwards}
+  .pulse{animation:pp 2.4s ease-in-out infinite}
+  @keyframes pp{0%,100%{opacity:.25}50%{opacity:1}}
+</style>
+<defs>
+  <pattern id="fine" width="18" height="18" patternUnits="userSpaceOnUse">
+    <path d="M18 0H0V18" class="gl" fill="none"/>
+  </pattern>
+  <pattern id="big" width="90" height="90" patternUnits="userSpaceOnUse">
+    <path d="M90 0H0V90" class="gm" fill="none"/>
+  </pattern>
+  <clipPath id="type"><rect x="92" y="150" width="0" height="26">
+    <animate attributeName="width" from="0" to="432" dur="1.9s" begin="2.0s" fill="freeze"/>
+  </rect></clipPath>
+  <clipPath id="type2"><rect x="92" y="182" width="0" height="22">
+    <animate attributeName="width" from="0" to="330" dur="1.3s" begin="3.7s" fill="freeze"/>
+  </rect></clipPath>
+</defs>
+
+<rect class="paper" width="900" height="264"/>
+<rect width="900" height="264" fill="url(#fine)"/>
+<rect width="900" height="264" fill="url(#big)"/>
+<line x1="72" y1="0" x2="72" y2="264" class="ml"/>
+<line x1="76" y1="0" x2="76" y2="264" class="ml" opacity=".45"/>
+<rect x="0" y="0" width="900" height="264" fill="none" class="gm" stroke-width="2"/>
+
+<!-- name: drawn as an outline, then inked in -->
+<text x="90" y="112" class="mono draw" font-size="52" font-weight="700" letter-spacing="-1">muhammad irfan</text>
+<text x="90" y="112" class="mono fillin" font-size="52" font-weight="700" letter-spacing="-1">muhammad irfan</text>
+
+<!-- typed subtitle -->
+<g clip-path="url(#type)">
+  <text x="92" y="169" class="mono ink2" font-size="17">environmental data · applied ml · game dev</text>
+</g>
+<rect x="92" y="152" width="9" height="20" class="caret" opacity="0">
+  <animate attributeName="x" from="92" to="528" dur="1.9s" begin="2.0s" fill="freeze"/>
+  <set attributeName="opacity" to="1" begin="2.0s"/>
+</rect>
+<g clip-path="url(#type2)">
+  <text x="92" y="199" class="mono pen" font-size="13.5">winnipeg, manitoba · treaty 1 territory</text>
+</g>
+
+<!-- sheet annotations -->
+<text x="700" y="34" class="mono pen rise d4" font-size="11.5">fig. 1 · subject profile</text>
+<text x="700" y="50" class="mono pen rise d4" font-size="11.5">rev. 2026.09 · sheet 1/1</text>
+<line x1="695" y1="58" x2="880" y2="58" class="gm" stroke-width="1.2"/>
+
+<!-- self-drawing trace -->
+<g transform="translate(636,96)">
+  <line x1="0" y1="0" x2="0" y2="96" class="gm" stroke-width="1.3"/>
+  <line x1="0" y1="96" x2="230" y2="96" class="gm" stroke-width="1.3"/>
+  <path class="trace" d="M4 88 L34 82 L64 70 L94 66 L124 44 L154 36 L184 18 L222 10"/>
+  <circle cx="222" cy="10" r="4" class="acc pulse"/>
+  <text x="6" y="-8" class="hand pen rise d1" font-size="12.5">things shipped over time</text>
+  <text x="118" y="115" class="mono pen rise d2" font-size="10.5">2023 · · · · · · · · 2026</text>
+</g>
+
+<!-- pinned tags -->
+<g class="rise d3">
+  <rect x="90" y="220" width="126" height="24" rx="3" fill="none" class="gm" stroke-width="1.3"/>
+  <text x="100" y="236" class="mono ink2" font-size="11.5">cmos award</text>
+  <rect x="226" y="220" width="134" height="24" rx="3" fill="none" class="gm" stroke-width="1.3"/>
+  <text x="236" y="236" class="mono ink2" font-size="11.5">mss silver medal</text>
+  <rect x="370" y="220" width="152" height="24" rx="3" fill="none" class="gm" stroke-width="1.3"/>
+  <text x="380" y="236" class="mono ink2" font-size="11.5">cybertitan finalist</text>
+  <rect x="532" y="220" width="136" height="24" rx="3" fill="none" class="gm" stroke-width="1.3"/>
+  <text x="542" y="236" class="mono ink2" font-size="11.5">ingenious+ award</text>
+  <rect x="678" y="220" width="112" height="24" rx="3" fill="none" class="accs" stroke-width="1.3"/>
+  <text x="688" y="236" class="mono acc" font-size="11.5">$3.5k+ funded</text>
+</g>
+</svg>

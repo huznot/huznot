@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 900 300" width="900" height="300" role="img" aria-label="mosi system diagram: twelve government apis feed biological proxy models that output a regional risk score">
+<style>
+  svg{--paper:#f7f5ed;--grid:#d8e2ec;--major:#c2d2e0;--ink:#173a5e;--ink2:#4a6076;--pencil:#8a99a8;--margin:#d98b8b;--accent:#c0562f;--wire:#8fa6b8}
+  @media (prefers-color-scheme:dark){
+    svg{--paper:#0a2239;--grid:#12385c;--major:#1b4a75;--ink:#eaf4ff;--ink2:#a9c9e2;--pencil:#6f92ac;--margin:#3f7fb0;--accent:#f0a868;--wire:#3d6f96}
+  }
+  .paper{fill:var(--paper)}.gl{stroke:var(--grid);stroke-width:1}.gm{stroke:var(--major);stroke-width:1}
+  .ml{stroke:var(--margin);stroke-width:1.3}
+  .ink{fill:var(--ink)}.ink2{fill:var(--ink2)}.pen{fill:var(--pencil)}.acc{fill:var(--accent)}
+  .mono{font-family:ui-monospace,SFMono-Regular,"SF Mono",Consolas,"Liberation Mono",Menlo,monospace}
+  .hand{font-family:"Segoe Print","Bradley Hand","Comic Sans MS",cursive}
+  .box{fill:none;stroke:var(--ink2);stroke-width:1.3}
+  .boxa{fill:none;stroke:var(--accent);stroke-width:1.6}
+  .wire{fill:none;stroke:var(--wire);stroke-width:1.2;stroke-dasharray:4 4}
+  .pkt{fill:var(--accent)}
+  .u{fill:none;stroke:var(--accent);stroke-width:2;stroke-dasharray:200;stroke-dashoffset:200;animation:dr 1s ease-out .2s forwards}
+  @keyframes dr{to{stroke-dashoffset:0}}
+  @keyframes fade{to{opacity:1}}
+  .row{opacity:0;animation:fade .5s ease-out forwards}
+  .gauge{fill:var(--accent);opacity:.85}
+  .track{fill:var(--major);opacity:.4}
+</style>
+<defs>
+  <pattern id="f4" width="18" height="18" patternUnits="userSpaceOnUse"><path d="M18 0H0V18" class="gl" fill="none"/></pattern>
+  <pattern id="b4" width="90" height="90" patternUnits="userSpaceOnUse"><path d="M90 0H0V90" class="gm" fill="none"/></pattern>
+  <path id="w1" d="M212 74 C 260 74, 250 128, 300 128"/>
+  <path id="w2" d="M212 108 C 260 108, 258 128, 300 132"/>
+  <path id="w3" d="M212 142 C 258 142, 262 140, 300 138"/>
+  <path id="w4" d="M212 176 C 262 176, 258 148, 300 144"/>
+  <path id="w5" d="M212 210 C 268 210, 262 152, 300 148"/>
+  <path id="w6" d="M452 138 H 528"/>
+  <path id="w7" d="M700 138 H 762"/>
+</defs>
+<rect class="paper" width="900" height="300"/>
+<rect width="900" height="300" fill="url(#f4)"/><rect width="900" height="300" fill="url(#b4)"/>
+<rect x="0" y="0" width="900" height="300" fill="none" class="gm" stroke-width="2"/>
+<line x1="34" y1="0" x2="34" y2="300" class="ml"/>
+
+<text x="46" y="34" class="mono ink" font-size="16" font-weight="700">mosi · how the risk score is produced</text>
+<path class="u" d="M46 42 H352"/>
+<text x="800" y="34" class="mono pen" font-size="11">fig. 4 · schematic</text>
+
+<!-- sources -->
+<text x="52" y="60" class="mono pen" font-size="10.5">live government feeds</text>
+<g class="mono ink2" font-size="11.5">
+  <g class="row" style="animation-delay:.2s"><rect x="52" y="64" width="160" height="22" rx="2" class="box"/><text x="62" y="79">temperature · humidity</text></g>
+  <g class="row" style="animation-delay:.3s"><rect x="52" y="98" width="160" height="22" rx="2" class="box"/><text x="62" y="113">precipitation · wind</text></g>
+  <g class="row" style="animation-delay:.4s"><rect x="52" y="132" width="160" height="22" rx="2" class="box"/><text x="62" y="147">air quality · wildfire</text></g>
+  <g class="row" style="animation-delay:.5s"><rect x="52" y="166" width="160" height="22" rx="2" class="box"/><text x="62" y="181">water · beach e. coli</text></g>
+  <g class="row" style="animation-delay:.6s"><rect x="52" y="200" width="160" height="22" rx="2" class="box"/><text x="62" y="215">wnv surveillance</text></g>
+</g>
+<text x="52" y="243" class="mono pen" font-size="10.5">+ 7 more · 12 apis total</text>
+
+<g class="wire"><use xlink:href="#w1" href="#w1"/><use xlink:href="#w2" href="#w2"/><use xlink:href="#w3" href="#w3"/><use xlink:href="#w4" href="#w4"/><use xlink:href="#w5" href="#w5"/><use xlink:href="#w6" href="#w6"/><use xlink:href="#w7" href="#w7"/></g>
+
+<circle r="3" class="pkt"><animateMotion dur="2.4s" repeatCount="indefinite" begin="0s"><mpath xlink:href="#w1" href="#w1"/></animateMotion></circle>
+<circle r="3" class="pkt"><animateMotion dur="2.4s" repeatCount="indefinite" begin=".5s"><mpath xlink:href="#w2" href="#w2"/></animateMotion></circle>
+<circle r="3" class="pkt"><animateMotion dur="2.4s" repeatCount="indefinite" begin="1s"><mpath xlink:href="#w3" href="#w3"/></animateMotion></circle>
+<circle r="3" class="pkt"><animateMotion dur="2.4s" repeatCount="indefinite" begin="1.5s"><mpath xlink:href="#w4" href="#w4"/></animateMotion></circle>
+<circle r="3" class="pkt"><animateMotion dur="2.4s" repeatCount="indefinite" begin="2s"><mpath xlink:href="#w5" href="#w5"/></animateMotion></circle>
+<circle r="3.2" class="pkt"><animateMotion dur="1.6s" repeatCount="indefinite" begin=".8s"><mpath xlink:href="#w6" href="#w6"/></animateMotion></circle>
+<circle r="3.2" class="pkt"><animateMotion dur="1.4s" repeatCount="indefinite" begin="1.2s"><mpath xlink:href="#w7" href="#w7"/></animateMotion></circle>
+
+<!-- stage 1 -->
+<g class="row" style="animation-delay:.75s">
+  <rect x="300" y="104" width="152" height="68" rx="3" class="box"/>
+  <text x="312" y="126" class="mono ink" font-size="12.5" font-weight="700">align + normalize</text>
+  <text x="312" y="144" class="mono ink2" font-size="10.5">per region, per day</text>
+  <text x="312" y="160" class="mono ink2" font-size="10.5">gaps flagged, not filled</text>
+</g>
+
+<!-- stage 2 -->
+<g class="row" style="animation-delay:.95s">
+  <rect x="528" y="90" width="172" height="96" rx="3" class="boxa"/>
+  <text x="540" y="112" class="mono ink" font-size="12.5" font-weight="700">biological proxy models</text>
+  <text x="540" y="132" class="mono ink2" font-size="10.5">west nile virus</text>
+  <text x="540" y="148" class="mono ink2" font-size="10.5">jamestown canyon virus</text>
+  <text x="540" y="164" class="mono ink2" font-size="10.5">snowshoe hare virus</text>
+  <text x="540" y="180" class="mono pen" font-size="10">degree-days · vector season</text>
+</g>
+
+<!-- stage 3: gauges -->
+<g class="row" style="animation-delay:1.15s">
+  <rect x="762" y="90" width="106" height="96" rx="3" class="box"/>
+  <text x="772" y="110" class="mono ink" font-size="12.5" font-weight="700">risk score</text>
+  <g>
+    <text x="772" y="130" class="mono ink2" font-size="9.5">vector</text>
+    <rect x="772" y="134" width="84" height="6" rx="3" class="track"/>
+    <rect x="772" y="134" width="10" height="6" rx="3" class="gauge">
+      <animate attributeName="width" values="10;58;34;62;22;10" dur="7s" repeatCount="indefinite"/></rect>
+    <text x="772" y="154" class="mono ink2" font-size="9.5">air</text>
+    <rect x="772" y="158" width="84" height="6" rx="3" class="track"/>
+    <rect x="772" y="158" width="26" height="6" rx="3" class="gauge">
+      <animate attributeName="width" values="26;14;44;20;36;26" dur="6s" repeatCount="indefinite"/></rect>
+    <text x="772" y="176" class="mono ink2" font-size="9.5">water</text>
+    <rect x="772" y="180" width="84" height="6" rx="3" class="track"/>
+    <rect x="772" y="180" width="40" height="6" rx="3" class="gauge">
+      <animate attributeName="width" values="40;24;52;30;40" dur="8s" repeatCount="indefinite"/></rect>
+  </g>
+</g>
+
+<!-- validation footnote -->
+<g class="row" style="animation-delay:1.35s">
+  <line x1="300" y1="222" x2="868" y2="222" class="gm" stroke-dasharray="4 4"/>
+  <text x="300" y="244" class="mono ink2" font-size="11.5">validation · rerun the same scoring equations against archived manitoba weekly wnv</text>
+  <text x="300" y="260" class="mono ink2" font-size="11.5">surveillance and daily weather, then compare to a 7-day baseline forecast.</text>
+  <text x="300" y="280" class="hand pen" font-size="12">model built with mentorship from dr. michael drebot, former director of</text>
+  <text x="300" y="294" class="hand pen" font-size="12">zoonotic diseases, national microbiology lab</text>
+</g>
+</svg>
