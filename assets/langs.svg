@@ -29,22 +29,22 @@
 <text x="46" y="56" class="mono pen" font-size="10">by bytes, public non-fork repos</text>
 <text x="46" y="84" class="mono ink2" font-size="12">typescript</text>
 <rect x="160" y="76" width="220" height="8" rx="4" fill="var(--major)" fill-opacity=".35"/>
-<rect x="160" y="76" width="0" height="8" rx="4" fill="var(--accent)" fill-opacity=".85"><animate attributeName="width" from="0" to="77.6" dur=".9s" begin="0.30s" fill="freeze"/></rect>
-<text x="390" y="84" class="mono pen" font-size="10.5">35.3%</text><text x="46" y="112" class="mono ink2" font-size="12">r</text>
+<rect x="160" y="76" width="0" height="8" rx="4" fill="var(--accent)" fill-opacity=".85"><animate attributeName="width" from="0" to="77.2" dur=".9s" begin="0.30s" fill="freeze"/></rect>
+<text x="390" y="84" class="mono pen" font-size="10.5">35.1%</text><text x="46" y="112" class="mono ink2" font-size="12">r</text>
 <rect x="160" y="104" width="220" height="8" rx="4" fill="var(--major)" fill-opacity=".35"/>
-<rect x="160" y="104" width="0" height="8" rx="4" fill="var(--accent)" fill-opacity=".85"><animate attributeName="width" from="0" to="44.1" dur=".9s" begin="0.42s" fill="freeze"/></rect>
-<text x="390" y="112" class="mono pen" font-size="10.5">20.0%</text><text x="46" y="140" class="mono ink2" font-size="12">html</text>
+<rect x="160" y="104" width="0" height="8" rx="4" fill="var(--accent)" fill-opacity=".85"><animate attributeName="width" from="0" to="43.8" dur=".9s" begin="0.42s" fill="freeze"/></rect>
+<text x="390" y="112" class="mono pen" font-size="10.5">19.9%</text><text x="46" y="140" class="mono ink2" font-size="12">html</text>
 <rect x="160" y="132" width="220" height="8" rx="4" fill="var(--major)" fill-opacity=".35"/>
-<rect x="160" y="132" width="0" height="8" rx="4" fill="var(--accent)" fill-opacity=".85"><animate attributeName="width" from="0" to="39.9" dur=".9s" begin="0.54s" fill="freeze"/></rect>
-<text x="390" y="140" class="mono pen" font-size="10.5">18.1%</text><text x="46" y="168" class="mono ink2" font-size="12">javascript</text>
+<rect x="160" y="132" width="0" height="8" rx="4" fill="var(--accent)" fill-opacity=".85"><animate attributeName="width" from="0" to="39.6" dur=".9s" begin="0.54s" fill="freeze"/></rect>
+<text x="390" y="140" class="mono pen" font-size="10.5">18.0%</text><text x="46" y="168" class="mono ink2" font-size="12">javascript</text>
 <rect x="160" y="160" width="220" height="8" rx="4" fill="var(--major)" fill-opacity=".35"/>
-<rect x="160" y="160" width="0" height="8" rx="4" fill="var(--accent)" fill-opacity=".85"><animate attributeName="width" from="0" to="35.8" dur=".9s" begin="0.66s" fill="freeze"/></rect>
-<text x="390" y="168" class="mono pen" font-size="10.5">16.3%</text><text x="46" y="196" class="mono ink2" font-size="12">css</text>
+<rect x="160" y="160" width="0" height="8" rx="4" fill="var(--accent)" fill-opacity=".85"><animate attributeName="width" from="0" to="36.8" dur=".9s" begin="0.66s" fill="freeze"/></rect>
+<text x="390" y="168" class="mono pen" font-size="10.5">16.7%</text><text x="46" y="196" class="mono ink2" font-size="12">css</text>
 <rect x="160" y="188" width="220" height="8" rx="4" fill="var(--major)" fill-opacity=".35"/>
-<rect x="160" y="188" width="0" height="8" rx="4" fill="var(--accent)" fill-opacity=".85"><animate attributeName="width" from="0" to="13.3" dur=".9s" begin="0.78s" fill="freeze"/></rect>
-<text x="390" y="196" class="mono pen" font-size="10.5">6.1%</text><text x="46" y="224" class="mono ink2" font-size="12">php</text>
+<rect x="160" y="188" width="0" height="8" rx="4" fill="var(--accent)" fill-opacity=".85"><animate attributeName="width" from="0" to="13.2" dur=".9s" begin="0.78s" fill="freeze"/></rect>
+<text x="390" y="196" class="mono pen" font-size="10.5">6.0%</text><text x="46" y="224" class="mono ink2" font-size="12">php</text>
 <rect x="160" y="216" width="220" height="8" rx="4" fill="var(--major)" fill-opacity=".35"/>
-<rect x="160" y="216" width="0" height="8" rx="4" fill="var(--accent)" fill-opacity=".85"><animate attributeName="width" from="0" to="4.1" dur=".9s" begin="0.90s" fill="freeze"/></rect>
-<text x="390" y="224" class="mono pen" font-size="10.5">1.9%</text>
-<text x="46" y="246" class="hand pen" font-size="11">measured 2026-09-02</text>
+<rect x="160" y="216" width="0" height="8" rx="4" fill="var(--accent)" fill-opacity=".85"><animate attributeName="width" from="0" to="4.0" dur=".9s" begin="0.90s" fill="freeze"/></rect>
+<text x="390" y="224" class="mono pen" font-size="10.5">1.8%</text>
+<text x="46" y="246" class="hand pen" font-size="11">measured 2026-09-03</text>
 </svg>
