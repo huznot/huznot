@@ -18,7 +18,7 @@ most of these started as something i wanted to know the answer to, so there is u
 <img src="./assets/games.svg" width="900" alt="four unity games: let there be light, 1v1 basketball, museum, dynamics sandbox">
 </div>
 
-<table>
+<table width="100%">
 <tr>
 <td width="25%" align="center"><a href="https://github.com/huznot/Let-There-Be-Light"><img src="./assets/projects/light.svg" width="64" alt=""></a><br><b><a href="https://github.com/huznot/Let-There-Be-Light">let there be light</a></b><br><sub>first person story game.<br><a href="https://youtu.be/E0pImV2HVu8">playthrough</a></sub></td>
 <td width="25%" align="center"><a href="https://github.com/huznot/1v1-Basketball"><img src="./assets/projects/basketball.svg" width="64" alt=""></a><br><b><a href="https://github.com/huznot/1v1-Basketball">1v1 basketball</a></b><br><sub>lebron vs jordan, one<br>keyboard, first to 10</sub></td>
@@ -29,7 +29,7 @@ most of these started as something i wanted to know the answer to, so there is u
 
 ## apps
 
-<table>
+<table width="100%">
 <tr>
 <td width="50%" valign="top" align="center"><img src="./assets/projects/mosi.svg" width="64" alt=""><br><b><a href="https://github.com/huznot/MOSI">mosi</a></b><br><sub>one outdoor risk score for any manitoba community, from twelve live government feeds. <a href="https://www.youtube.com/shorts/96YkiCytAJQ">walkthrough</a></sub></td>
 <td width="50%" valign="top" align="center"><img src="./assets/projects/cleanit.png" width="64" alt=""><br><b><a href="https://github.com/huznot/CleanIt">cleanit</a></b><br><sub>point your camera at some trash, find out where it goes, drop it off, get points that spend at winnipeg businesses</sub></td>
@@ -50,7 +50,7 @@ cleanit came out of a canu and kahanee design lab, kept going at shad, has taken
 
 ## research
 
-<table>
+<table width="100%">
 <tr>
 <td width="50%" valign="top" align="center"><img src="./assets/projects/sapbert.png" width="64" alt=""><br><b><a href="https://github.com/huznot/SAPBert">icd crosswalk</a></b><br><sub>hospital records are full of diagnosis codes that got retired years ago. this matches them to the current ones automatically</sub></td>
 <td width="50%" valign="top" align="center"><img src="./assets/projects/ram.svg" width="64" alt=""><br><b><a href="https://github.com/CodyWallbridge/RAM-Combustion-Engine-Exhibit">combustion engine exhibit</a></b><br><sub>the kiosk software behind a museum exhibit, four screens and a live display driven from one python backend</sub></td>
