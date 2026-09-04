@@ -234,7 +234,7 @@ const cells = weeks
       .map((d) => {
         const lv = level(d.contributionCount);
         const x = X0 + wi * STEP, y = Y0 + d.weekday * STEP;
-        const base = `class="cell" style="animation-delay:${delay}s" x="${x}" y="${y}" width="${CELL}" height="${CELL}" rx="2"`;
+        const base = `x="${x}" y="${y}" width="${CELL}" height="${CELL}" rx="2"`;
         return lv === 0
           ? `<rect ${base} fill="var(--major)" fill-opacity=".55"/>`
           : `<rect ${base} fill="var(--accent)" fill-opacity="${OP[lv]}"><title>${esc(d.date)}: ${d.contributionCount}</title></rect>`;
@@ -318,11 +318,11 @@ ${countUp(data.totals.contributions, 88, 130, "mono ink", 30, { anchor: "middle"
   <circle class="ring" r="${R}" transform="rotate(-90)"
     stroke-dasharray="${(C * frac).toFixed(1)} ${C.toFixed(1)}"/>
 </g>
-${countUp(current.len, 220, 128, "mono acc", 30, { anchor: "middle", delay: 0.4 })}
+${countUp(current.len, 220, 128, "mono acc", 30, { anchor: "middle" })}
 <text x="220" y="192" text-anchor="middle" class="mono acc" font-size="11" font-weight="700">current streak</text>
 <text x="220" y="209" text-anchor="middle" class="mono pen" font-size="9.5">${current.len ? `${pretty(current.start)} &#8594; now` : "warming back up"}</text>
 
-${countUp(longest.len, 352, 130, "mono ink", 30, { anchor: "middle", delay: 0.35 })}
+${countUp(longest.len, 352, 130, "mono ink", 30, { anchor: "middle" })}
 <text x="352" y="156" text-anchor="middle" class="mono ink2" font-size="11">longest streak</text>
 <text x="352" y="174" text-anchor="middle" class="mono pen" font-size="9.5">${longest.len ? `${pretty(longest.start)} &#8211; ${pretty(longest.end)}` : "&#8212;"}</text>
 
@@ -377,7 +377,7 @@ const CW = (TW - 58 - 34) / tally.length;
 const tiles = tally
   .map(([label, value], i) => {
     const cx = 58 + CW * i + CW / 2;
-    return `${countUp(value, cx, 56, "mono ink", 26, { anchor: "middle", delay: 0.25 + i * 0.06 })}
+    return `${countUp(value, cx, 56, "mono ink", 26, { anchor: "middle" })}
 <text x="${cx}" y="76" text-anchor="middle" class="mono pen" font-size="10.5">${label}</text>
 ${i ? `<line x1="${(58 + CW * i).toFixed(1)}" y1="26" x2="${(58 + CW * i).toFixed(1)}" y2="76" class="gm"/>` : ""}`;
   })

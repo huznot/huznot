@@ -30,6 +30,14 @@ jobs:
       # PROFILE_TOKEN is a personal access token with the `repo` scope. it is what
       # lets the language plate see private repositories. without it the workflow
       # still runs, it just counts public ones.
+      # renders every plate against fake api results first. a broken template
+      # literal fails here in a second rather than after the real fetch.
+      - name: smoke test the renderers
+        run: |
+          mkdir -p /tmp/smoke
+          cp -r scripts /tmp/smoke/
+          cd /tmp/smoke && node scripts/smoke.mjs
+
       - name: redraw the data plates
         env:
           GH_TOKEN: ${{ secrets.PROFILE_TOKEN || secrets.GITHUB_TOKEN }}

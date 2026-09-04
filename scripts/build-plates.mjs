@@ -315,7 +315,7 @@ writePlate(
 <text x="46" y="34" class="mono ink" font-size="16" font-weight="700">what i build with</text>
 <path class="u" d="M46 42 H236"/>
 <text x="838" y="34" class="mono pen" font-size="11">fig. 4</text>
-<text x="46" y="58" class="mono ink2" font-size="11.5">everything on this page, not any one project</text>
+<text x="46" y="58" class="mono ink2" font-size="11.5">everything on this page</text>
 ${stackRows}
 <line x1="440" y1="70" x2="440" y2="212" class="gm"/>
 <text x="470" y="82" class="mono ink" font-size="13" font-weight="700">also on the bench</text>
