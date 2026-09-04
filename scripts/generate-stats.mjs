@@ -27,7 +27,7 @@ query($login:String!){
     }`).join("\n    ")}
     repositories(first:100, ownerAffiliations:OWNER, isFork:false, privacy:null, orderBy:{field:PUSHED_AT,direction:DESC}){
       totalCount
-      nodes{ name stargazerCount languages(first:10, orderBy:{field:SIZE,direction:DESC}){ edges{ size node{ name } } } }
+      nodes{ name isPrivate stargazerCount languages(first:10, orderBy:{field:SIZE,direction:DESC}){ edges{ size node{ name } } } }
     }
   }
 }`;
@@ -119,6 +119,7 @@ async function viaPublic() {
     const langs = await fetch(r.languages_url, { headers: UA }).then((x) => x.json());
     repos.push({
       name: r.name,
+      isPrivate: false,
       stargazerCount: r.stargazers_count,
       languages: { edges: Object.entries(langs).map(([name, size]) => ({ size, node: { name } })) },
     });
@@ -173,6 +174,7 @@ const bytes = new Map();
 for (const repo of data.repos) {
   for (const e of repo.languages.edges) bytes.set(e.node.name, (bytes.get(e.node.name) || 0) + e.size);
 }
+const privateCount = data.repos.filter((r) => r.isPrivate).length;
 const totalBytes = [...bytes.values()].reduce((a, b) => a + b, 0) || 1;
 const langs = [...bytes.entries()]
   .sort((a, b) => b[1] - a[1])
@@ -347,7 +349,7 @@ writePlate(
 <text x="46" y="34" class="mono ink" font-size="15" font-weight="700">what it is written in</text>
 <path class="u" d="M46 42 H262"/>
 <text x="358" y="34" class="mono pen" font-size="11">fig. 8</text>
-<text x="46" y="58" class="mono pen" font-size="10">by bytes, across ${data.repos.length} repos${TOKEN ? ", public and private" : ", public only"}</text>
+<text x="46" y="58" class="mono pen" font-size="10">by bytes, across ${data.repos.length} repos${privateCount ? `, ${privateCount} of them private` : ", all public"}</text>
 ${bars}
 <text x="46" y="${LH - 14}" class="hand pen" font-size="11">measured ${generated}</text>`,
   })
