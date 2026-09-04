@@ -57,14 +57,14 @@ svg{--paper:#0d1117;--grid:#151b23;--major:#21262d;--rule:#30363d;
 <text x="26" y="32" class="mono ink" font-size="15" font-weight="700">combustion engine exhibit</text>
 <path class="u" d="M26 40 H286"/>
 <text x="392" y="32" class="mono pen" font-size="11">fig. 6</text>
-<text x="26" y="56" class="mono ink2" font-size="10.5">a puzzle the whole room has to solve together</text>
+<text x="26" y="56" class="mono ink2" font-size="10.5">a puzzle the group has to solve together</text>
 <text x="26" y="70" class="mono pen" font-size="9.5">royal aviation museum of western canada</text>
 
 <rect x="70" y="86" width="300" height="94" rx="6" class="screen"/>
 <text x="220" y="134" text-anchor="middle" class="mono acc" font-size="34" font-weight="700">62%</text>
 <rect x="100" y="150" width="240" height="8" rx="4" class="track3"/>
 <rect x="100" y="150" height="8" rx="4" class="fill" width="150"/>
-<text x="220" y="172" text-anchor="middle" class="mono pen" font-size="9">cycle completion, readable from across the gallery</text>
+<text x="220" y="172" text-anchor="middle" class="mono pen" font-size="9">cycle completion</text>
 <text x="220" y="196" text-anchor="middle" class="mono pen" font-size="9">four kiosks, one big display</text>
 
 <g>
@@ -99,7 +99,5 @@ svg{--paper:#0d1117;--grid:#151b23;--major:#21262d;--rule:#30363d;
 
 <text x="26" y="318" class="mono ink2" font-size="10.5">press the kiosks in the order of the engine cycle:</text>
 <text x="26" y="334" class="mono ink" font-size="10.5" font-weight="700">intake &#183; compression &#183; power &#183; exhaust</text>
-<text x="26" y="356" class="mono ink2" font-size="10.5">get it right and the four reshuffle, so nobody can</text>
-<text x="26" y="370" class="mono ink2" font-size="10.5">just remember which button to hit</text>
-<text x="26" y="388" class="mono pen" font-size="9.5">one python backend serving all five screens</text>
+<text x="26" y="356" class="mono ink2" font-size="10.5">randomizes after every correct cycle</text>
 </svg>
