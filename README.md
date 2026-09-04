@@ -66,8 +66,6 @@ cleanit came out of a canu and kahanee design lab, kept going at shad, has taken
 </table>
 </div>
 
-## worked with
-
 <div align="center">
 <img src="./assets/logos.svg" width="900" alt="royal aviation museum of western canada, george and fay yee centre for healthcare innovation, university of manitoba, canu, the manitoba teachers society, coalition of manitoba cultural communities for families, pool pros">
 </div>
