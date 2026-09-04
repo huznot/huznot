@@ -381,6 +381,80 @@ ${arrowDown(284)}
   })
 );
 
+
+/* ------------------------------------------------ combustion engine exhibit */
+// the exhibit is a co-op puzzle: one big display counts the room down, four
+// kiosks each hold one stroke of the cycle, and the room has to press them in
+// order. every clean cycle reshuffles which kiosk is which, so it never turns
+// into muscle memory.
+
+const exCss = `
+  .screen{fill:none;stroke:var(--rule);stroke-width:1.3}
+  .glass{fill:var(--major);opacity:.55}
+  .track3{fill:var(--major)}
+  .btn{fill:none;stroke:var(--pencil);stroke-width:1.6}
+  .btnnext{fill:none;stroke:var(--accent);stroke-width:2}
+  @keyframes ping{0%{r:13;opacity:.55}70%,100%{r:20;opacity:0}}
+  .halo{fill:none;stroke:var(--accent);stroke-width:1.6;animation:ping 2.2s ease-out infinite}
+  @keyframes creep{0%,100%{width:150px}50%{width:186px}}
+  .fill{fill:var(--accent);animation:creep 6s ease-in-out infinite}
+`;
+
+// order is the press order the room is currently being asked for, which is the
+// point: it is not the order the kiosks are sitting in
+const KIOSKS = [
+  { label: "intake", order: 3 },
+  { label: "compress", order: 1 },
+  { label: "power", order: 4 },
+  { label: "exhaust", order: 2 },
+];
+
+const KW = 88, KGAP = 12, KY = 206;
+const kiosks = KIOSKS.map((k, i) => {
+  const x = 26 + i * (KW + KGAP);
+  const cx = x + KW / 2;
+  const next = k.order === 1;
+  return `<g>
+  <rect x="${x}" y="${KY}" width="${KW}" height="80" rx="5" class="screen"/>
+  <rect x="${x + 10}" y="${KY + 10}" width="${KW - 20}" height="26" rx="3" class="glass"/>
+  <text x="${cx}" y="${KY + 27}" text-anchor="middle" class="mono ink2" font-size="9">${k.label}</text>
+  ${next ? `<circle cx="${cx}" cy="${KY + 58}" r="13" class="halo"/>` : ""}
+  <circle cx="${cx}" cy="${KY + 58}" r="13" class="${next ? "btnnext" : "btn"}"/>
+  <text x="${cx}" y="${KY + 62}" text-anchor="middle" class="mono ${next ? "acc" : "pen"}" font-size="12" font-weight="700">${k.order}</text>
+</g>`;
+}).join("");
+
+writePlate(
+  "assets/exhibit.svg",
+  svg({
+    w: 440,
+    h: 400,
+    label: "combustion engine exhibit: one big display and four kiosks pressed in the order of the engine cycle",
+    css: exCss,
+    body: `${sheet(440, 400, "e", { margin: 0 })}
+<text x="26" y="32" class="mono ink" font-size="15" font-weight="700">combustion engine exhibit</text>
+<path class="u" d="M26 40 H286"/>
+<text x="392" y="32" class="mono pen" font-size="11">fig. 6</text>
+<text x="26" y="56" class="mono ink2" font-size="10.5">a puzzle the whole room has to solve together</text>
+<text x="26" y="70" class="mono pen" font-size="9.5">royal aviation museum of western canada</text>
+
+<rect x="70" y="86" width="300" height="94" rx="6" class="screen"/>
+<text x="220" y="134" text-anchor="middle" class="mono acc" font-size="34" font-weight="700">62%</text>
+<rect x="100" y="150" width="240" height="8" rx="4" class="track3"/>
+<rect x="100" y="150" height="8" rx="4" class="fill" width="150"/>
+<text x="220" y="172" text-anchor="middle" class="mono pen" font-size="9">cycle completion, readable from across the gallery</text>
+<text x="220" y="196" text-anchor="middle" class="mono pen" font-size="9">four kiosks, one big display</text>
+
+${kiosks}
+
+<text x="26" y="318" class="mono ink2" font-size="10.5">press the kiosks in the order of the engine cycle:</text>
+<text x="26" y="334" class="mono ink" font-size="10.5" font-weight="700">intake &#183; compression &#183; power &#183; exhaust</text>
+<text x="26" y="356" class="mono ink2" font-size="10.5">get it right and the four reshuffle, so nobody can</text>
+<text x="26" y="370" class="mono ink2" font-size="10.5">just remember which button to hit</text>
+<text x="26" y="388" class="mono pen" font-size="9.5">one python backend serving all five screens</text>`,
+  })
+);
+
 /* ------------------------------------------------------------ project marks */
 // small square tiles for the highlight cards. the ones with a real logo are
 // built by scripts/prep-project-logos.py; these are the ones that have none.
@@ -428,4 +502,4 @@ mark("physics", "dynamics sandbox", `<line x1="26" y1="72" x2="76" y2="72" strok
 <path d="M52 26 L64 24 L62 36" fill="none" stroke="var(--accent)" stroke-width="3.6" stroke-linejoin="round" stroke-linecap="round"/>
 <circle cx="34" cy="66" r="5" fill="var(--ink)"/>`);
 
-console.log("wrote header, games, logos, card, crosswalk and the project marks");
+console.log("wrote header, games, logos, card, crosswalk, exhibit and the project marks");

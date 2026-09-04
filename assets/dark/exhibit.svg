@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 440 400" width="440" height="400" role="img" aria-label="combustion engine exhibit: one big display and four kiosks pressed in the order of the engine cycle">
+<style>
+  svg{--paper:#ffffff;--grid:#eff2f5;--major:#dfe4ea;--rule:#d1d9e0;
+      --ink:#1f2328;--ink2:#59636e;--pencil:#818b98;--margin:#f0cdb6;
+      --accent:#bc4c00;--blue:#0969da;--green:#1a7f37;--purple:#8250df;
+      --chip:#ffffff;--chipline:#d1d9e0;--bar:#59636e;--base:#8c959f;--wire:#d1d9e0}
+  @media (prefers-color-scheme:dark){
+    svg{--paper:#0d1117;--grid:#151b23;--major:#21262d;--rule:#30363d;
+        --ink:#f0f6fc;--ink2:#9198a1;--pencil:#6e7681;--margin:#4a2f1d;
+        --accent:#f0883e;--blue:#4493f8;--green:#3fb950;--purple:#ab7df8;
+        --chip:#f6f8fa;--chipline:#30363d;--bar:#7d8590;--base:#6e7681;--wire:#30363d}
+  }
+  .paper{fill:var(--paper)}
+  .gl{stroke:var(--grid);stroke-width:1}
+  .gm{stroke:var(--major);stroke-width:1}
+  .rl{stroke:var(--rule);stroke-width:1}
+  .ml{stroke:var(--margin);stroke-width:1.3}
+  .ink{fill:var(--ink)}.ink2{fill:var(--ink2)}.pen{fill:var(--pencil)}
+  .acc{fill:var(--accent)}.accs{stroke:var(--accent)}
+  .blu{fill:var(--blue)}.grn{fill:var(--green)}.pur{fill:var(--purple)}
+  .mono{font-family:ui-monospace,SFMono-Regular,"SF Mono",Consolas,"Liberation Mono",Menlo,monospace}
+  .hand{font-family:"Segoe Print","Bradley Hand","Comic Sans MS",cursive}
+  @keyframes dr{to{stroke-dashoffset:0}}
+  @keyframes fade{to{opacity:1}}
+  .u{fill:none;stroke:var(--accent);stroke-width:2}
+
+  /* nothing on these plates is allowed to start invisible and animate itself in.
+     an svg used as an image reports prefers-reduced-motion as no-preference and
+     then declines to run the animation anyway, on github mobile and on any
+     machine with animations turned off, which leaves that content hidden for
+     good. so intro animations are gone and only looping decoration is left,
+     since a paused loop just sits on its first frame and still looks right. */
+
+  .screen{fill:none;stroke:var(--rule);stroke-width:1.3}
+  .glass{fill:var(--major);opacity:.55}
+  .track3{fill:var(--major)}
+  .btn{fill:none;stroke:var(--pencil);stroke-width:1.6}
+  .btnnext{fill:none;stroke:var(--accent);stroke-width:2}
+  @keyframes ping{0%{r:13;opacity:.55}70%,100%{r:20;opacity:0}}
+  .halo{fill:none;stroke:var(--accent);stroke-width:1.6;animation:ping 2.2s ease-out infinite}
+  @keyframes creep{0%,100%{width:150px}50%{width:186px}}
+  .fill{fill:var(--accent);animation:creep 6s ease-in-out infinite}
+svg{--paper:#0d1117;--grid:#151b23;--major:#21262d;--rule:#30363d;
+        --ink:#f0f6fc;--ink2:#9198a1;--pencil:#6e7681;--margin:#4a2f1d;
+        --accent:#f0883e;--blue:#4493f8;--green:#3fb950;--purple:#ab7df8;
+        --chip:#f6f8fa;--chipline:#30363d;--bar:#7d8590;--base:#6e7681;--wire:#30363d}</style>
+
+<defs>
+  <pattern id="ef" width="18" height="18" patternUnits="userSpaceOnUse"><path d="M18 0H0V18" class="gl" fill="none"/></pattern>
+  <pattern id="eb" width="90" height="90" patternUnits="userSpaceOnUse"><path d="M90 0H0V90" class="gm" fill="none"/></pattern>
+</defs>
+<rect class="paper" width="440" height="400" rx="6"/>
+<rect width="440" height="400" fill="url(#ef)" rx="6"/>
+<rect width="440" height="400" fill="url(#eb)" rx="6"/>
+
+<rect x=".5" y=".5" width="439" height="399" rx="6" fill="none" class="rl"/>
+<text x="26" y="32" class="mono ink" font-size="15" font-weight="700">combustion engine exhibit</text>
+<path class="u" d="M26 40 H286"/>
+<text x="392" y="32" class="mono pen" font-size="11">fig. 6</text>
+<text x="26" y="56" class="mono ink2" font-size="10.5">a puzzle the whole room has to solve together</text>
+<text x="26" y="70" class="mono pen" font-size="9.5">royal aviation museum of western canada</text>
+
+<rect x="70" y="86" width="300" height="94" rx="6" class="screen"/>
+<text x="220" y="134" text-anchor="middle" class="mono acc" font-size="34" font-weight="700">62%</text>
+<rect x="100" y="150" width="240" height="8" rx="4" class="track3"/>
+<rect x="100" y="150" height="8" rx="4" class="fill" width="150"/>
+<text x="220" y="172" text-anchor="middle" class="mono pen" font-size="9">cycle completion, readable from across the gallery</text>
+<text x="220" y="196" text-anchor="middle" class="mono pen" font-size="9">four kiosks, one big display</text>
+
+<g>
+  <rect x="26" y="206" width="88" height="80" rx="5" class="screen"/>
+  <rect x="36" y="216" width="68" height="26" rx="3" class="glass"/>
+  <text x="70" y="233" text-anchor="middle" class="mono ink2" font-size="9">intake</text>
+  
+  <circle cx="70" cy="264" r="13" class="btn"/>
+  <text x="70" y="268" text-anchor="middle" class="mono pen" font-size="12" font-weight="700">3</text>
+</g><g>
+  <rect x="126" y="206" width="88" height="80" rx="5" class="screen"/>
+  <rect x="136" y="216" width="68" height="26" rx="3" class="glass"/>
+  <text x="170" y="233" text-anchor="middle" class="mono ink2" font-size="9">compress</text>
+  <circle cx="170" cy="264" r="13" class="halo"/>
+  <circle cx="170" cy="264" r="13" class="btnnext"/>
+  <text x="170" y="268" text-anchor="middle" class="mono acc" font-size="12" font-weight="700">1</text>
+</g><g>
+  <rect x="226" y="206" width="88" height="80" rx="5" class="screen"/>
+  <rect x="236" y="216" width="68" height="26" rx="3" class="glass"/>
+  <text x="270" y="233" text-anchor="middle" class="mono ink2" font-size="9">power</text>
+  
+  <circle cx="270" cy="264" r="13" class="btn"/>
+  <text x="270" y="268" text-anchor="middle" class="mono pen" font-size="12" font-weight="700">4</text>
+</g><g>
+  <rect x="326" y="206" width="88" height="80" rx="5" class="screen"/>
+  <rect x="336" y="216" width="68" height="26" rx="3" class="glass"/>
+  <text x="370" y="233" text-anchor="middle" class="mono ink2" font-size="9">exhaust</text>
+  
+  <circle cx="370" cy="264" r="13" class="btn"/>
+  <text x="370" y="268" text-anchor="middle" class="mono pen" font-size="12" font-weight="700">2</text>
+</g>
+
+<text x="26" y="318" class="mono ink2" font-size="10.5">press the kiosks in the order of the engine cycle:</text>
+<text x="26" y="334" class="mono ink" font-size="10.5" font-weight="700">intake &#183; compression &#183; power &#183; exhaust</text>
+<text x="26" y="356" class="mono ink2" font-size="10.5">get it right and the four reshuffle, so nobody can</text>
+<text x="26" y="370" class="mono ink2" font-size="10.5">just remember which button to hit</text>
+<text x="26" y="388" class="mono pen" font-size="9.5">one python backend serving all five screens</text>
+</svg>

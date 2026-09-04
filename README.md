@@ -50,12 +50,17 @@ cleanit came out of a canu and kahanee initiative to spread compassion in Winnip
 <table width="100%">
 <tr>
 <td width="50%" valign="top" align="center"><img src="./assets/projects/sapbert.png" width="64" alt=""><br><b><a href="https://github.com/huznot/SAPBert">icd crosswalk</a></b><br><sub>hospital records are full of diagnosis codes that got retired years ago. this matches them to the current ones automatically</sub></td>
-<td width="50%" valign="top" align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/projects/dark/ram.svg"><img src="./assets/projects/ram.svg" width="64" alt=""></picture><br><b><a href="https://github.com/CodyWallbridge/RAM-Combustion-Engine-Exhibit">combustion engine exhibit</a></b><br><sub>the kiosk software behind a museum exhibit, four screens and a live display driven from one python backend</sub></td>
+<td width="50%" valign="top" align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/projects/dark/ram.svg"><img src="./assets/projects/ram.svg" width="64" alt=""></picture><br><b><a href="https://github.com/CodyWallbridge/RAM-Combustion-Engine-Exhibit">combustion engine exhibit</a></b><br><sub>a co-op puzzle on the museum floor. four kiosks, one big display, press them in the order of the engine cycle</sub></td>
 </tr>
 </table>
 
 <div align="center">
-<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/dark/crosswalk.svg"><img src="./assets/crosswalk.svg" width="440" alt="icd crosswalk: an old diagnosis code is embedded and matched to its modern equivalent"></picture>
+<table>
+<tr>
+<td valign="top"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/dark/crosswalk.svg"><img src="./assets/crosswalk.svg" width="440" alt="icd crosswalk: an old diagnosis code is embedded and matched to its modern equivalent"></picture></td>
+<td valign="top"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/dark/exhibit.svg"><img src="./assets/exhibit.svg" width="440" alt="combustion engine exhibit: one big display and four kiosks pressed in the order of the engine cycle"></picture></td>
+</tr>
+</table>
 </div>
 
 <div align="center">

@@ -43,8 +43,8 @@
 <rect x=".5" y=".5" width="439" height="291" rx="6" fill="none" class="rl"/>
 <text x="46" y="34" class="mono ink" font-size="15" font-weight="700">what it is written in</text>
 <path class="u" d="M46 42 H262"/>
-<text x="358" y="34" class="mono pen" font-size="11">fig. 8</text>
-<text x="46" y="58" class="mono pen" font-size="10">by bytes, across 52 repos, 34 of them private</text>
+<text x="358" y="34" class="mono pen" font-size="11">fig. 9</text>
+<text x="46" y="58" class="mono pen" font-size="10">by bytes, across 52 repos</text>
 <text x="46" y="88" class="mono ink2" font-size="12">c#</text>
 <rect x="176" y="80" width="200" height="8" rx="4" fill="var(--major)" fill-opacity=".7"/>
 <rect x="176" y="80" width="92.5" height="8" rx="4" fill="var(--accent)" fill-opacity=".9"><animate attributeName="width" from="0" to="92.5" dur=".9s" begin="0.30s" fill="freeze"/></rect>

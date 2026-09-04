@@ -24,7 +24,7 @@ const body = [
   row("games", img("games.svg", 900)),
   row("worked with", img("logos.svg", 900)),
   row("mosi", img("mosi.svg", 900)),
-  row("crosswalk", img("crosswalk.svg", 440)),
+  row("crosswalk / exhibit", img("crosswalk.svg", 440) + img("exhibit.svg", 440)),
   row("contributions", img("contrib.svg", 900)),
   row("languages / streak", img("langs.svg", 440) + img("streak.svg", 440)),
   row("totals", img("totals.svg", 900)),

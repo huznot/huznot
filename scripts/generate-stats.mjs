@@ -27,7 +27,7 @@ query($login:String!){
     }`).join("\n    ")}
     repositories(first:100, ownerAffiliations:OWNER, isFork:false, orderBy:{field:PUSHED_AT,direction:DESC}){
       totalCount
-      nodes{ name isPrivate stargazerCount languages(first:10, orderBy:{field:SIZE,direction:DESC}){ edges{ size node{ name } } } }
+      nodes{ name stargazerCount languages(first:10, orderBy:{field:SIZE,direction:DESC}){ edges{ size node{ name } } } }
     }
   }
 }`;
@@ -131,7 +131,6 @@ async function viaPublic() {
     const langs = await rest(r.languages_url);
     repos.push({
       name: r.name,
-      isPrivate: false,
       stargazerCount: r.stargazers_count,
       languages: { edges: Object.entries(langs).map(([name, size]) => ({ size, node: { name } })) },
     });
@@ -186,7 +185,6 @@ const bytes = new Map();
 for (const repo of data.repos) {
   for (const e of repo.languages.edges) bytes.set(e.node.name, (bytes.get(e.node.name) || 0) + e.size);
 }
-const privateCount = data.repos.filter((r) => r.isPrivate).length;
 const totalBytes = [...bytes.values()].reduce((a, b) => a + b, 0) || 1;
 const langs = [...bytes.entries()]
   .sort((a, b) => b[1] - a[1])
@@ -273,7 +271,7 @@ writePlate(
     body: `${sheet(W, H, "c")}
 <text x="46" y="34" class="mono ink" font-size="16" font-weight="700">the log &#183; last 12 months</text>
 <path class="u" d="M46 42 H300"/>
-<text x="${W - 108}" y="34" class="mono pen" font-size="11">fig. 6 &#183; plate a</text>
+<text x="${W - 108}" y="34" class="mono pen" font-size="11">fig. 7 &#183; plate a</text>
 <text x="46" y="58" class="mono ink2" font-size="11.5">${yearTotal} contributions this year &#183; ${data.totals.contributions} since ${pretty(firstActive)}</text>
 ${months}${dayLabels}${cells}
 <text x="46" y="${Y0 + 7 * STEP + 24}" class="mono pen" font-size="10.5">longest streak ${longest.len}d &#183; current streak ${current.len}d</text>
@@ -304,7 +302,7 @@ writePlate(
     body: `${sheet(SW, SH, "k", { margin: 0 })}
 <text x="26" y="32" class="mono ink" font-size="15" font-weight="700">still showing up</text>
 <path class="u" d="M26 40 H228"/>
-<text x="392" y="32" class="mono pen" font-size="11">fig. 7</text>
+<text x="392" y="32" class="mono pen" font-size="11">fig. 8</text>
 
 <line x1="152" y1="66" x2="152" y2="228" class="gm"/>
 <line x1="288" y1="66" x2="288" y2="228" class="gm"/>
@@ -354,8 +352,8 @@ writePlate(
     body: `${sheet(LW, LH, "l")}
 <text x="46" y="34" class="mono ink" font-size="15" font-weight="700">what it is written in</text>
 <path class="u" d="M46 42 H262"/>
-<text x="358" y="34" class="mono pen" font-size="11">fig. 8</text>
-<text x="46" y="58" class="mono pen" font-size="10">by bytes, across ${data.repos.length} repos${privateCount ? `, ${privateCount} of them private` : ", all public"}</text>
+<text x="358" y="34" class="mono pen" font-size="11">fig. 9</text>
+<text x="46" y="58" class="mono pen" font-size="10">by bytes, across ${data.repos.length} repos</text>
 ${bars}
 <text x="46" y="${LH - 14}" class="hand pen" font-size="11">measured ${generated}</text>`,
   })
