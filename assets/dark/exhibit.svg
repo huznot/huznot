@@ -3,13 +3,20 @@
   svg{--paper:#ffffff;--grid:#eff2f5;--major:#dfe4ea;--rule:#d1d9e0;
       --ink:#1f2328;--ink2:#59636e;--pencil:#818b98;--margin:#f0cdb6;
       --accent:#bc4c00;--blue:#0969da;--green:#1a7f37;--purple:#8250df;
-      --chip:#ffffff;--chipline:#d1d9e0;--bar:#59636e;--base:#8c959f;--wire:#d1d9e0}
+      --chip:#ffffff;--chipline:#d1d9e0;--bar:#59636e;--base:#8c959f;--wire:#d1d9e0;
+      --mark-filter:none;--mark-opacity:.72}
   @media (prefers-color-scheme:dark){
     svg{--paper:#0d1117;--grid:#151b23;--major:#21262d;--rule:#30363d;
         --ink:#f0f6fc;--ink2:#9198a1;--pencil:#6e7681;--margin:#4a2f1d;
         --accent:#f0883e;--blue:#4493f8;--green:#3fb950;--purple:#ab7df8;
-        --chip:#f6f8fa;--chipline:#30363d;--bar:#7d8590;--base:#6e7681;--wire:#30363d}
+        --chip:#f6f8fa;--chipline:#30363d;--bar:#7d8590;--base:#6e7681;--wire:#30363d;
+        --mark-filter:invert(1);--mark-opacity:.8}
   }
+  /* anything that has to change with the theme belongs in the two palette blocks
+     above, even when it is not a colour. writePlate builds the dark file by
+     pinning that block on, so a rule left sitting inside the media query alone
+     never fires for the readers who get the dark file, which is every reader on
+     github mobile. --mark-filter is why the carousel logos are inverted. */
   .paper{fill:var(--paper)}
   .gl{stroke:var(--grid);stroke-width:1}
   .gm{stroke:var(--major);stroke-width:1}
@@ -43,7 +50,8 @@
 svg{--paper:#0d1117;--grid:#151b23;--major:#21262d;--rule:#30363d;
         --ink:#f0f6fc;--ink2:#9198a1;--pencil:#6e7681;--margin:#4a2f1d;
         --accent:#f0883e;--blue:#4493f8;--green:#3fb950;--purple:#ab7df8;
-        --chip:#f6f8fa;--chipline:#30363d;--bar:#7d8590;--base:#6e7681;--wire:#30363d}</style>
+        --chip:#f6f8fa;--chipline:#30363d;--bar:#7d8590;--base:#6e7681;--wire:#30363d;
+        --mark-filter:invert(1);--mark-opacity:.8}</style>
 
 <defs>
   <pattern id="ef" width="18" height="18" patternUnits="userSpaceOnUse"><path d="M18 0H0V18" class="gl" fill="none"/></pattern>

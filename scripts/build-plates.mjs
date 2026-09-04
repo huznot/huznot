@@ -225,8 +225,7 @@ const chips = logos
   .join("");
 
 const logosCss = `
-  .mark{opacity:.72}
-  @media (prefers-color-scheme:dark){.mark{filter:invert(1);opacity:.8}}
+  .mark{filter:var(--mark-filter);opacity:var(--mark-opacity)}
   @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-${ROW_W}px)}}
   .track{animation:marquee ${(logos.length * 5.5).toFixed(0)}s linear infinite}
 `;

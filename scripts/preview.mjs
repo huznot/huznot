@@ -39,17 +39,23 @@ writeFileSync(
  .pane{padding:24px 32px}
  .light{background:#fff;color:#1f2328;color-scheme:light}
  .dark{background:#0d1117;color:#e6edf3;color-scheme:dark}
+ /* github mobile serves the dark file but never evaluates the query inside it,
+    so forcing light here on a dark ground reproduces exactly what a phone sees */
+ .mobile{color-scheme:light}
  h2{font-size:12px;opacity:.55;font-weight:400;margin:22px 0 6px}
  .row{display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap}
  img{display:block}
 </style>
 <div class="pane light" id=L></div>
 <div class="pane dark" id=D></div>
+<div class="pane dark mobile" id=M></div>
 <script>
 const t = ${JSON.stringify(body)};
 L.innerHTML = t;
 D.innerHTML = t;
 for (const i of D.querySelectorAll("img[data-dark]")) i.src = i.dataset.dark;
+M.innerHTML = t.replace(/<h2>/g, "<h2>mobile · ");
+for (const i of M.querySelectorAll("img[data-dark]")) i.src = i.dataset.dark;
 </script>
 `
 );
