@@ -7,7 +7,7 @@ on:
   push:
     branches: [main]
     paths:
-      - "scripts/generate-stats.mjs"
+      - "scripts/**"
       - ".github/workflows/stats.yml"
 
 permissions:
@@ -27,9 +27,12 @@ jobs:
         with:
           node-version: 20
 
-      - name: build contribution and language plates
+      # PROFILE_TOKEN is a personal access token with the `repo` scope. it is what
+      # lets the language plate see private repositories. without it the workflow
+      # still runs, it just counts public ones.
+      - name: redraw the data plates
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.PROFILE_TOKEN || secrets.GITHUB_TOKEN }}
           GH_LOGIN: ${{ github.repository_owner }}
         run: node scripts/generate-stats.mjs
 
@@ -37,7 +40,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/contrib.svg assets/langs.svg
+          git add assets/contrib.svg assets/langs.svg assets/streak.svg assets/totals.svg
           if git diff --staged --quiet; then
             echo "no change"
           else

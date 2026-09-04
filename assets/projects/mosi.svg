@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 96 96" width="96" height="96" role="img" aria-label="mosi">
+<style>
+  svg{--paper:#ffffff;--grid:#eff2f5;--major:#dfe4ea;--rule:#d1d9e0;
+      --ink:#1f2328;--ink2:#59636e;--pencil:#818b98;--margin:#f0cdb6;
+      --accent:#bc4c00;--blue:#0969da;--green:#1a7f37;--purple:#8250df;
+      --chip:#ffffff;--chipline:#d1d9e0;--bar:#59636e;--base:#8c959f;--wire:#d1d9e0}
+  @media (prefers-color-scheme:dark){
+    svg{--paper:#0d1117;--grid:#151b23;--major:#21262d;--rule:#30363d;
+        --ink:#f0f6fc;--ink2:#9198a1;--pencil:#6e7681;--margin:#4a2f1d;
+        --accent:#f0883e;--blue:#4493f8;--green:#3fb950;--purple:#ab7df8;
+        --chip:#f6f8fa;--chipline:#30363d;--bar:#7d8590;--base:#6e7681;--wire:#30363d}
+  }
+  .paper{fill:var(--paper)}
+  .gl{stroke:var(--grid);stroke-width:1}
+  .gm{stroke:var(--major);stroke-width:1}
+  .rl{stroke:var(--rule);stroke-width:1}
+  .ml{stroke:var(--margin);stroke-width:1.3}
+  .ink{fill:var(--ink)}.ink2{fill:var(--ink2)}.pen{fill:var(--pencil)}
+  .acc{fill:var(--accent)}.accs{stroke:var(--accent)}
+  .blu{fill:var(--blue)}.grn{fill:var(--green)}.pur{fill:var(--purple)}
+  .mono{font-family:ui-monospace,SFMono-Regular,"SF Mono",Consolas,"Liberation Mono",Menlo,monospace}
+  .hand{font-family:"Segoe Print","Bradley Hand","Comic Sans MS",cursive}
+  @keyframes dr{to{stroke-dashoffset:0}}
+  @keyframes fade{to{opacity:1}}
+  @keyframes rise{to{opacity:1;transform:translateY(0)}}
+  .u{fill:none;stroke:var(--accent);stroke-width:2}
+  .d1{animation-delay:.35s}.d2{animation-delay:.5s}.d3{animation-delay:.65s}
+  .d4{animation-delay:.8s}.d5{animation-delay:.95s}.d6{animation-delay:1.1s}
+
+  /* every intro animation lives in here on purpose. an svg used as an image has
+     its animations paused when the reader asks for reduced motion, and a paused
+     animation never reaches its end state, so anything starting at opacity 0
+     would just stay invisible. resting state is the finished state, motion is
+     only ever added on top. note for later: this is a style block inside xml,
+     so no angle brackets in here or the whole file stops parsing. */
+  @media (prefers-reduced-motion:no-preference){
+    .u{stroke-dasharray:260;stroke-dashoffset:260;animation:dr .9s ease-out .2s forwards}
+    .rise{opacity:0;transform:translateY(6px);animation:rise .5s ease-out forwards}
+  }
+</style>
+<rect width="96" height="96" rx="18" fill="var(--major)" fill-opacity=".55"/>
+<path d="M24 62 a24 24 0 0 1 48 0" fill="none" stroke="var(--rule)" stroke-width="7" stroke-linecap="round"/>
+<path d="M24 62 a24 24 0 0 1 18 -23" fill="none" stroke="var(--accent)" stroke-width="7" stroke-linecap="round"/>
+<line x1="48" y1="62" x2="62" y2="44" stroke="var(--ink)" stroke-width="3.4" stroke-linecap="round"/>
+<circle cx="48" cy="62" r="4" fill="var(--ink)"/>
+</svg>

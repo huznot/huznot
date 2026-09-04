@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 900 300" width="900" height="300" role="img" aria-label="mosi system diagram: twelve government apis feed biological proxy models that output a regional risk score">
 <style>
-  svg{--paper:#f7f5ed;--grid:#d8e2ec;--major:#c2d2e0;--ink:#173a5e;--ink2:#4a6076;--pencil:#8a99a8;--margin:#d98b8b;--accent:#c0562f;--wire:#8fa6b8}
+  svg{--paper:#ffffff;--grid:#eff2f5;--major:#dfe4ea;--rule:#d1d9e0;--ink:#1f2328;--ink2:#59636e;--pencil:#818b98;--margin:#f0cdb6;--accent:#bc4c00;--blue:#0969da;--green:#1a7f37;--purple:#8250df;--chip:#ffffff;--chipline:#d1d9e0;--bar:#59636e;--base:#8c959f;--wire:#d1d9e0}
   @media (prefers-color-scheme:dark){
-    svg{--paper:#0a2239;--grid:#12385c;--major:#1b4a75;--ink:#eaf4ff;--ink2:#a9c9e2;--pencil:#6f92ac;--margin:#3f7fb0;--accent:#f0a868;--wire:#3d6f96}
+    svg{--paper:#0d1117;--grid:#151b23;--major:#21262d;--rule:#30363d;--ink:#f0f6fc;--ink2:#9198a1;--pencil:#6e7681;--margin:#4a2f1d;--accent:#f0883e;--blue:#4493f8;--green:#3fb950;--purple:#ab7df8;--chip:#f6f8fa;--chipline:#30363d;--bar:#7d8590;--base:#6e7681;--wire:#30363d}
   }
   .paper{fill:var(--paper)}.gl{stroke:var(--grid);stroke-width:1}.gm{stroke:var(--major);stroke-width:1}
   .ml{stroke:var(--margin);stroke-width:1.3}
@@ -13,10 +13,26 @@
   .boxa{fill:none;stroke:var(--accent);stroke-width:1.6}
   .wire{fill:none;stroke:var(--wire);stroke-width:1.2;stroke-dasharray:4 4}
   .pkt{fill:var(--accent)}
-  .u{fill:none;stroke:var(--accent);stroke-width:2;stroke-dasharray:200;stroke-dashoffset:200;animation:dr 1s ease-out .2s forwards}
+  .u{fill:none;stroke:var(--accent);stroke-width:2}
   @keyframes dr{to{stroke-dashoffset:0}}
   @keyframes fade{to{opacity:1}}
-  .row{opacity:0;animation:fade .5s ease-out forwards}
+  .row{}
+  @media (prefers-reduced-motion:no-preference){
+    .u{stroke-dasharray:200;stroke-dashoffset:200;animation:dr 1s ease-out .2s forwards}
+    .row{}
+  @media (prefers-reduced-motion:no-preference){
+    .u{stroke-dasharray:200;stroke-dashoffset:200;animation:dr 1s ease-out .2s forwards}
+    .row{}
+  @media (prefers-reduced-motion:no-preference){
+    .u{stroke-dasharray:200;stroke-dashoffset:200;animation:dr 1s ease-out .2s forwards}
+    .row{}
+  @media (prefers-reduced-motion:no-preference){
+    .u{stroke-dasharray:200;stroke-dashoffset:200;animation:dr 1s ease-out .2s forwards}
+    .row{opacity:0;animation:fade .5s ease-out forwards}
+  }
+  }
+  }
+  }
   .gauge{fill:var(--accent);opacity:.85}
   .track{fill:var(--major);opacity:.4}
 </style>

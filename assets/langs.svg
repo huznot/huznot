@@ -1,50 +1,84 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 260" width="440" height="260" role="img" aria-label="language distribution across public repositories">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 292" width="440" height="292" role="img" aria-label="language distribution across public repositories">
 <style>
-  svg{--paper:#f7f5ed;--grid:#d8e2ec;--major:#c2d2e0;--ink:#173a5e;--ink2:#4a6076;--pencil:#8a99a8;--margin:#d98b8b;--accent:#c0562f}
+  svg{--paper:#ffffff;--grid:#eff2f5;--major:#dfe4ea;--rule:#d1d9e0;
+      --ink:#1f2328;--ink2:#59636e;--pencil:#818b98;--margin:#f0cdb6;
+      --accent:#bc4c00;--blue:#0969da;--green:#1a7f37;--purple:#8250df;
+      --chip:#ffffff;--chipline:#d1d9e0;--bar:#59636e;--base:#8c959f;--wire:#d1d9e0}
   @media (prefers-color-scheme:dark){
-    svg{--paper:#0a2239;--grid:#12385c;--major:#1b4a75;--ink:#eaf4ff;--ink2:#a9c9e2;--pencil:#6f92ac;--margin:#3f7fb0;--accent:#f0a868}
+    svg{--paper:#0d1117;--grid:#151b23;--major:#21262d;--rule:#30363d;
+        --ink:#f0f6fc;--ink2:#9198a1;--pencil:#6e7681;--margin:#4a2f1d;
+        --accent:#f0883e;--blue:#4493f8;--green:#3fb950;--purple:#ab7df8;
+        --chip:#f6f8fa;--chipline:#30363d;--bar:#7d8590;--base:#6e7681;--wire:#30363d}
   }
-  .paper{fill:var(--paper)}.gl{stroke:var(--grid);stroke-width:1}.gm{stroke:var(--major);stroke-width:1}
+  .paper{fill:var(--paper)}
+  .gl{stroke:var(--grid);stroke-width:1}
+  .gm{stroke:var(--major);stroke-width:1}
+  .rl{stroke:var(--rule);stroke-width:1}
   .ml{stroke:var(--margin);stroke-width:1.3}
-  .ink{fill:var(--ink)}.ink2{fill:var(--ink2)}.pen{fill:var(--pencil)}.acc{fill:var(--accent)}
+  .ink{fill:var(--ink)}.ink2{fill:var(--ink2)}.pen{fill:var(--pencil)}
+  .acc{fill:var(--accent)}.accs{stroke:var(--accent)}
+  .blu{fill:var(--blue)}.grn{fill:var(--green)}.pur{fill:var(--purple)}
   .mono{font-family:ui-monospace,SFMono-Regular,"SF Mono",Consolas,"Liberation Mono",Menlo,monospace}
   .hand{font-family:"Segoe Print","Bradley Hand","Comic Sans MS",cursive}
   @keyframes dr{to{stroke-dashoffset:0}}
   @keyframes fade{to{opacity:1}}
-  .u{fill:none;stroke:var(--accent);stroke-width:2;stroke-dasharray:220;stroke-dashoffset:220;animation:dr 1s ease-out .2s forwards}
-  .cell{opacity:0;animation:fade .5s ease-out forwards}
+  @keyframes rise{to{opacity:1;transform:translateY(0)}}
+  .u{fill:none;stroke:var(--accent);stroke-width:2}
+  .d1{animation-delay:.35s}.d2{animation-delay:.5s}.d3{animation-delay:.65s}
+  .d4{animation-delay:.8s}.d5{animation-delay:.95s}.d6{animation-delay:1.1s}
+
+  /* every intro animation lives in here on purpose. an svg used as an image has
+     its animations paused when the reader asks for reduced motion, and a paused
+     animation never reaches its end state, so anything starting at opacity 0
+     would just stay invisible. resting state is the finished state, motion is
+     only ever added on top. note for later: this is a style block inside xml,
+     so no angle brackets in here or the whole file stops parsing. */
+  @media (prefers-reduced-motion:no-preference){
+    .u{stroke-dasharray:260;stroke-dashoffset:260;animation:dr .9s ease-out .2s forwards}
+    .rise{opacity:0;transform:translateY(6px);animation:rise .5s ease-out forwards}
+  }
 </style>
 
 <defs>
   <pattern id="lf" width="18" height="18" patternUnits="userSpaceOnUse"><path d="M18 0H0V18" class="gl" fill="none"/></pattern>
   <pattern id="lb" width="90" height="90" patternUnits="userSpaceOnUse"><path d="M90 0H0V90" class="gm" fill="none"/></pattern>
 </defs>
-<rect class="paper" width="440" height="260"/>
-<rect width="440" height="260" fill="url(#lf)"/><rect width="440" height="260" fill="url(#lb)"/>
-<rect x="0" y="0" width="440" height="260" fill="none" class="gm" stroke-width="2"/>
-<line x1="34" y1="0" x2="34" y2="260" class="ml"/>
+<rect class="paper" width="440" height="292" rx="6"/>
+<rect width="440" height="292" fill="url(#lf)" rx="6"/>
+<rect width="440" height="292" fill="url(#lb)" rx="6"/>
+<line x1="34" y1="0" x2="34" y2="292" class="ml"/>
+<rect x=".5" y=".5" width="439" height="291" rx="6" fill="none" class="rl"/>
 <text x="46" y="34" class="mono ink" font-size="15" font-weight="700">what it is written in</text>
 <path class="u" d="M46 42 H262"/>
-<text x="356" y="34" class="mono pen" font-size="11">fig. 6</text>
-<text x="46" y="56" class="mono pen" font-size="10">by bytes, public non-fork repos</text>
-<text x="46" y="84" class="mono ink2" font-size="12">typescript</text>
-<rect x="160" y="76" width="220" height="8" rx="4" fill="var(--major)" fill-opacity=".35"/>
-<rect x="160" y="76" width="0" height="8" rx="4" fill="var(--accent)" fill-opacity=".85"><animate attributeName="width" from="0" to="77.2" dur=".9s" begin="0.30s" fill="freeze"/></rect>
-<text x="390" y="84" class="mono pen" font-size="10.5">35.1%</text><text x="46" y="112" class="mono ink2" font-size="12">r</text>
-<rect x="160" y="104" width="220" height="8" rx="4" fill="var(--major)" fill-opacity=".35"/>
-<rect x="160" y="104" width="0" height="8" rx="4" fill="var(--accent)" fill-opacity=".85"><animate attributeName="width" from="0" to="43.8" dur=".9s" begin="0.42s" fill="freeze"/></rect>
-<text x="390" y="112" class="mono pen" font-size="10.5">19.9%</text><text x="46" y="140" class="mono ink2" font-size="12">html</text>
-<rect x="160" y="132" width="220" height="8" rx="4" fill="var(--major)" fill-opacity=".35"/>
-<rect x="160" y="132" width="0" height="8" rx="4" fill="var(--accent)" fill-opacity=".85"><animate attributeName="width" from="0" to="39.6" dur=".9s" begin="0.54s" fill="freeze"/></rect>
-<text x="390" y="140" class="mono pen" font-size="10.5">18.0%</text><text x="46" y="168" class="mono ink2" font-size="12">javascript</text>
-<rect x="160" y="160" width="220" height="8" rx="4" fill="var(--major)" fill-opacity=".35"/>
-<rect x="160" y="160" width="0" height="8" rx="4" fill="var(--accent)" fill-opacity=".85"><animate attributeName="width" from="0" to="36.8" dur=".9s" begin="0.66s" fill="freeze"/></rect>
-<text x="390" y="168" class="mono pen" font-size="10.5">16.7%</text><text x="46" y="196" class="mono ink2" font-size="12">css</text>
-<rect x="160" y="188" width="220" height="8" rx="4" fill="var(--major)" fill-opacity=".35"/>
-<rect x="160" y="188" width="0" height="8" rx="4" fill="var(--accent)" fill-opacity=".85"><animate attributeName="width" from="0" to="13.2" dur=".9s" begin="0.78s" fill="freeze"/></rect>
-<text x="390" y="196" class="mono pen" font-size="10.5">6.0%</text><text x="46" y="224" class="mono ink2" font-size="12">php</text>
-<rect x="160" y="216" width="220" height="8" rx="4" fill="var(--major)" fill-opacity=".35"/>
-<rect x="160" y="216" width="0" height="8" rx="4" fill="var(--accent)" fill-opacity=".85"><animate attributeName="width" from="0" to="4.0" dur=".9s" begin="0.90s" fill="freeze"/></rect>
-<text x="390" y="224" class="mono pen" font-size="10.5">1.8%</text>
-<text x="46" y="246" class="hand pen" font-size="11">measured 2026-09-03</text>
+<text x="358" y="34" class="mono pen" font-size="11">fig. 8</text>
+<text x="46" y="58" class="mono pen" font-size="10">by bytes, across 18 repos, public only</text>
+<text x="46" y="88" class="mono ink2" font-size="12">c#</text>
+<rect x="176" y="80" width="200" height="8" rx="4" fill="var(--major)" fill-opacity=".7"/>
+<rect x="176" y="80" width="148.9" height="8" rx="4" fill="var(--accent)" fill-opacity=".9"><animate attributeName="width" from="0" to="148.9" dur=".9s" begin="0.30s" fill="freeze"/></rect>
+<text x="394" y="88" text-anchor="end" class="mono pen" font-size="10.5">74.4%</text>
+<text x="46" y="114" class="mono ink2" font-size="12">typescript</text>
+<rect x="176" y="106" width="200" height="8" rx="4" fill="var(--major)" fill-opacity=".7"/>
+<rect x="176" y="106" width="13.9" height="8" rx="4" fill="var(--accent)" fill-opacity=".9"><animate attributeName="width" from="0" to="13.9" dur=".9s" begin="0.40s" fill="freeze"/></rect>
+<text x="394" y="114" text-anchor="end" class="mono pen" font-size="10.5">6.9%</text>
+<text x="46" y="140" class="mono ink2" font-size="12">shaderlab</text>
+<rect x="176" y="132" width="200" height="8" rx="4" fill="var(--major)" fill-opacity=".7"/>
+<rect x="176" y="132" width="9.7" height="8" rx="4" fill="var(--accent)" fill-opacity=".9"><animate attributeName="width" from="0" to="9.7" dur=".9s" begin="0.50s" fill="freeze"/></rect>
+<text x="394" y="140" text-anchor="end" class="mono pen" font-size="10.5">4.8%</text>
+<text x="46" y="166" class="mono ink2" font-size="12">r</text>
+<rect x="176" y="158" width="200" height="8" rx="4" fill="var(--major)" fill-opacity=".7"/>
+<rect x="176" y="158" width="7.9" height="8" rx="4" fill="var(--accent)" fill-opacity=".9"><animate attributeName="width" from="0" to="7.9" dur=".9s" begin="0.60s" fill="freeze"/></rect>
+<text x="394" y="166" text-anchor="end" class="mono pen" font-size="10.5">3.9%</text>
+<text x="46" y="192" class="mono ink2" font-size="12">html</text>
+<rect x="176" y="184" width="200" height="8" rx="4" fill="var(--major)" fill-opacity=".7"/>
+<rect x="176" y="184" width="7.3" height="8" rx="4" fill="var(--accent)" fill-opacity=".9"><animate attributeName="width" from="0" to="7.3" dur=".9s" begin="0.70s" fill="freeze"/></rect>
+<text x="394" y="192" text-anchor="end" class="mono pen" font-size="10.5">3.6%</text>
+<text x="46" y="218" class="mono ink2" font-size="12">javascript</text>
+<rect x="176" y="210" width="200" height="8" rx="4" fill="var(--major)" fill-opacity=".7"/>
+<rect x="176" y="210" width="6.6" height="8" rx="4" fill="var(--accent)" fill-opacity=".9"><animate attributeName="width" from="0" to="6.6" dur=".9s" begin="0.80s" fill="freeze"/></rect>
+<text x="394" y="218" text-anchor="end" class="mono pen" font-size="10.5">3.3%</text>
+<text x="46" y="244" class="mono ink2" font-size="12">css</text>
+<rect x="176" y="236" width="200" height="8" rx="4" fill="var(--major)" fill-opacity=".7"/>
+<rect x="176" y="236" width="3.0" height="8" rx="4" fill="var(--accent)" fill-opacity=".9"><animate attributeName="width" from="0" to="3.0" dur=".9s" begin="0.90s" fill="freeze"/></rect>
+<text x="394" y="244" text-anchor="end" class="mono pen" font-size="10.5">1.2%</text>
+<text x="46" y="278" class="hand pen" font-size="11">measured 2026-09-04</text>
 </svg>
