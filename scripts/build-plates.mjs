@@ -19,18 +19,10 @@ mkdirSync("assets", { recursive: true });
 /* ------------------------------------------------------------------ header */
 
 const headerCss = `
-  .draw{fill:none;stroke:none}
   .fillin{fill:var(--ink)}
-  .caret{fill:var(--accent)}
   .trace{fill:none;stroke:var(--accent);stroke-width:2;stroke-linecap:round}
   @keyframes beat{0%,100%{r:4;opacity:1}50%{r:6.5;opacity:.45}}
-  @media (prefers-reduced-motion:no-preference){
-    .draw{stroke:var(--ink);stroke-width:1.15;stroke-linejoin:round;
-          stroke-dasharray:1400;stroke-dashoffset:1400;animation:dr 2.2s ease-out .15s forwards}
-    .fillin{opacity:0;animation:fade 1s ease-out 1.5s forwards}
-    .trace{stroke-dasharray:340;stroke-dashoffset:340;animation:dr 1.8s ease-out 1.2s forwards}
-    .pulse{animation:beat 2.4s ease-in-out 3s infinite}
-  }
+  .pulse{animation:beat 2.4s ease-in-out infinite}
 `;
 
 const tags = [
@@ -44,7 +36,7 @@ let tagX = 90;
 const tagRow = tags
   .map(([label, i, hot]) => {
     const w = label.length * 7.4 + 22;
-    const g = `<g class="rise d${Math.min(6, i + 2)}"><rect x="${tagX}" y="220" width="${w.toFixed(0)}" height="24" rx="4" fill="none" class="${hot ? "accs" : "gm"}" stroke-width="1.3"/><text x="${tagX + 11}" y="236" class="mono ${hot ? "acc" : "ink2"}" font-size="11.5">${label}</text></g>`;
+    const g = `<g ><rect x="${tagX}" y="220" width="${w.toFixed(0)}" height="24" rx="4" fill="none" class="${hot ? "accs" : "gm"}" stroke-width="1.3"/><text x="${tagX + 11}" y="236" class="mono ${hot ? "acc" : "ink2"}" font-size="11.5">${label}</text></g>`;
     tagX += w + 12;
     return g;
   })
@@ -55,33 +47,20 @@ const header = svg({
   h: 264,
   label: "muhammad irfan - unity games, environmental data, applied ml",
   css: headerCss,
-  body: `<defs>
-  <clipPath id="type"><rect x="92" y="152" width="420" height="24">
-    <animate attributeName="width" from="0" to="420" dur="1.8s" begin="2.0s" fill="freeze"/>
-  </rect></clipPath>
-  <clipPath id="type2"><rect x="92" y="182" width="200" height="22">
-    <animate attributeName="width" from="0" to="200" dur="1s" begin="3.6s" fill="freeze"/>
-  </rect></clipPath>
-</defs>
-${sheet(900, 264, "h", { margin: 72 })}
+  body: `${sheet(900, 264, "h", { margin: 72 })}
 <line x1="76" y1="0" x2="76" y2="264" class="ml" opacity=".45"/>
 
-<text x="90" y="112" class="mono draw" font-size="52" font-weight="700" letter-spacing="-1">muhammad irfan</text>
 <text x="90" y="112" class="mono fillin" font-size="52" font-weight="700" letter-spacing="-1">muhammad irfan</text>
 
-<g clip-path="url(#type)">
+<g>
   <text x="92" y="169" class="mono ink2" font-size="17">unity games &#183; environmental data &#183; applied ml</text>
 </g>
-<rect x="92" y="152" width="9" height="20" class="caret" opacity="0">
-  <animate attributeName="x" from="92" to="516" dur="1.8s" begin="2.0s" fill="freeze"/>
-  <set attributeName="opacity" to="1" begin="2.0s"/>
-</rect>
-<g clip-path="url(#type2)">
+<g>
   <text x="92" y="199" class="mono pen" font-size="13.5">winnipeg, manitoba</text>
 </g>
 
-<text x="700" y="34" class="mono pen rise d4" font-size="11.5">fig. 1 &#183; subject profile</text>
-<text x="700" y="50" class="mono pen rise d4" font-size="11.5">rev. 2026.09 &#183; sheet 1/1</text>
+<text x="700" y="34" class="mono pen" font-size="11.5">fig. 1 &#183; subject profile</text>
+<text x="700" y="50" class="mono pen" font-size="11.5">rev. 2026.09 &#183; sheet 1/1</text>
 <line x1="695" y1="58" x2="866" y2="58" class="gm" stroke-width="1.2"/>
 
 <g transform="translate(636,96)">
@@ -89,8 +68,8 @@ ${sheet(900, 264, "h", { margin: 72 })}
   <line x1="0" y1="96" x2="222" y2="96" class="gm" stroke-width="1.3"/>
   <path class="trace" d="M4 88 L34 82 L64 70 L94 66 L124 44 L154 36 L184 18 L214 10"/>
   <circle cx="214" cy="10" r="4" class="acc pulse"/>
-  <text x="6" y="-8" class="hand pen rise d1" font-size="12.5">things shipped over time</text>
-  <text x="112" y="115" class="mono pen rise d2" font-size="10.5">2023 &#183; &#183; &#183; &#183; &#183; &#183; 2026</text>
+  <text x="6" y="-8" class="hand pen" font-size="12.5">things shipped over time</text>
+  <text x="112" y="115" class="mono pen" font-size="10.5">2023 &#183; &#183; &#183; &#183; &#183; &#183; 2026</text>
 </g>
 
 ${tagRow}`,
@@ -105,14 +84,12 @@ writePlate("assets/header.svg", header);
 const gamesCss = `
   .panel{fill:none;stroke:var(--rule);stroke-width:1.2}
   .well{fill:var(--major);opacity:.9}
-  @media (prefers-reduced-motion:no-preference){
   .glow{animation:flick 5.2s ease-in-out infinite}
   .bulb{animation:bulb 5.2s ease-in-out infinite}
   .net{transform-origin:center top;animation:swish 3.2s ease-out infinite}
   .spot{animation:sweep 6s ease-in-out infinite}
   .vec{transform-origin:0 0;animation:swing 3.4s ease-in-out infinite}
   .cursor{animation:blink 1.1s steps(1) infinite}
-  }
   @keyframes flick{0%,100%{opacity:.20}8%{opacity:.85}14%{opacity:.35}22%{opacity:.95}
                    40%{opacity:.6}58%{opacity:.98}72%{opacity:.5}88%{opacity:.9}}
   @keyframes bulb{0%,100%{opacity:.5}22%{opacity:1}58%{opacity:1}72%{opacity:.6}}
@@ -129,7 +106,7 @@ const GAMES = [
     repo: "Let-There-Be-Light",
     title: "let there be light",
     lines: ["first person story game,", "three acts, one flashback"],
-    tag: "windows build",
+    tag: "huznot/Let-There-Be-Light",
     art: `<defs><radialGradient id="lamp">
         <stop offset="0" stop-color="var(--accent)" stop-opacity=".5"/>
         <stop offset=".5" stop-color="var(--accent)" stop-opacity=".16"/>
@@ -147,7 +124,7 @@ const GAMES = [
     repo: "1v1-Basketball",
     title: "1v1 basketball",
     lines: ["two players, one keyboard", "first to 10 takes it"],
-    tag: "windows build",
+    tag: "huznot/1v1-Basketball",
     art: `<path d="M40 82 Q84 6 128 54" fill="none" stroke="var(--major)" stroke-width="1.2" stroke-dasharray="3 5"/>
       <line x1="128" y1="26" x2="128" y2="54" class="gm" stroke-width="1.6"/>
       <line x1="112" y1="54" x2="140" y2="54" class="accs" stroke-width="2.4"/>
@@ -165,7 +142,7 @@ const GAMES = [
     repo: "Museum-Game",
     title: "museum",
     lines: ["a black history museum,", "narrated room by room"],
-    tag: "playable in browser",
+    tag: "huznot/Museum-Game",
     art: `<g>
         <rect x="26" y="26" width="34" height="42" rx="2" fill="none" class="rl"/>
         <rect x="72" y="26" width="34" height="42" rx="2" fill="none" class="rl"/>
@@ -183,7 +160,7 @@ const GAMES = [
     repo: "physics-sandbox",
     title: "dynamics sandbox",
     lines: ["velocity, acceleration", "and force, updating live"],
-    tag: "windows build",
+    tag: "huznot/physics-sandbox",
     art: `<line x1="26" y1="86" x2="158" y2="86" class="gm" stroke-width="1.3"/>
       <g transform="translate(64,62)">
         <g class="vec">
@@ -201,13 +178,13 @@ const GAMES = [
 
 const PW = 189;
 const gamePanels = GAMES.map(
-  (g, i) => `<g class="rise d${i + 1}">
+  (g, i) => `<g >
   <rect x="${g.x}" y="66" width="${PW}" height="184" rx="6" class="panel"/>
   <g transform="translate(${g.x + 14},80)">${g.art}</g>
   <text x="${g.x + 14}" y="196" class="mono ink" font-size="13.5" font-weight="700">${g.title}</text>
   <text x="${g.x + 14}" y="214" class="mono ink2" font-size="10.5">${g.lines[0]}</text>
   <text x="${g.x + 14}" y="228" class="mono ink2" font-size="10.5">${g.lines[1]}</text>
-  <text x="${g.x + 14}" y="243" class="mono pen" font-size="9.5">${g.tag}</text>
+  <text x="${g.x + 14}" y="243" class="mono pen" font-size="9">${g.tag}</text>
 </g>`
 ).join("\n");
 
@@ -222,7 +199,7 @@ writePlate(
 <text x="46" y="34" class="mono ink" font-size="16" font-weight="700">games, made in unity</text>
 <path class="u" d="M46 42 H262"/>
 <text x="800" y="34" class="mono pen" font-size="11">fig. 2 &#183; plate a</text>
-<text x="46" y="56" class="mono ink2" font-size="11.5">c# &#183; unity 6000.2 and 2022.3 &#183; source and builds are all public</text>
+<text x="46" y="56" class="mono ink2" font-size="11.5">c# &#183; unity 6000.2 and 2022.3 &#183; windows builds, museum runs in the browser</text>
 ${gamePanels}`,
   })
 );
@@ -252,9 +229,7 @@ const logosCss = `
   .mark{opacity:.72}
   @media (prefers-color-scheme:dark){.mark{filter:invert(1);opacity:.8}}
   @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-${ROW_W}px)}}
-  @media (prefers-reduced-motion:no-preference){
-    .track{animation:marquee ${(logos.length * 5.5).toFixed(0)}s linear infinite}
-  }
+  .track{animation:marquee ${(logos.length * 5.5).toFixed(0)}s linear infinite}
 `;
 
 writePlate(
@@ -295,19 +270,16 @@ const cardCss = `
   .track2{fill:var(--major);opacity:.5}
   .bar{fill:var(--bar)}
   .tick{fill:none;stroke:var(--accent);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-  @media (prefers-reduced-motion:no-preference){
-    .tick{stroke-dasharray:22;stroke-dashoffset:22;animation:dr .4s ease-out forwards}
-  }
 `;
 
 const STACK = [
-  ["c# · unity", 156],
-  ["typescript", 152],
-  ["react native · expo", 140],
-  ["javascript · html · css", 146],
-  ["python", 118],
-  ["r", 96],
-  ["php · mysql", 88],
+  ["c# · unity", 1.0],
+  ["typescript", 0.97],
+  ["react native · expo", 0.9],
+  ["javascript · html · css", 0.94],
+  ["python", 0.76],
+  ["r", 0.62],
+  ["php · mysql", 0.56],
 ];
 const BENCH = [
   "leaflet · geospatial mapping",
@@ -317,38 +289,39 @@ const BENCH = [
   "shaders, physics and game feel",
 ];
 
-const stackRows = STACK.map(([name, w], i) => {
-  const y = 70 + i * 25;
-  return `<g class="rise" style="animation-delay:${(0.25 + i * 0.08).toFixed(2)}s"><text x="46" y="${y}" class="mono ink2" font-size="12.5">${name}</text>
-  <rect x="230" y="${y - 10}" width="160" height="7" rx="3.5" class="track2"/>
-  <rect x="230" y="${y - 10}" width="${w}" height="7" rx="3.5" class="bar"><animate attributeName="width" from="0" to="${w}" dur=".8s" begin="${(0.3 + i * 0.08).toFixed(2)}s" fill="freeze"/></rect></g>`;
-}).join("\n");
+const CW_ = 900, CH_ = 240, TRACK = 190;
+const stackRows = STACK.map(([name, frac], i) => {
+  const y = 82 + i * 22;
+  const w = (TRACK * frac).toFixed(1);
+  return `<g><text x="46" y="${y}" class="mono ink2" font-size="12">${name}</text>
+  <rect x="212" y="${y - 9}" width="${TRACK}" height="7" rx="3.5" class="track2"/>
+  <rect x="212" y="${y - 9}" width="${w}" height="7" rx="3.5" class="bar"><animate attributeName="width" from="0" to="${w}" dur=".8s" begin="${(0.3 + i * 0.07).toFixed(2)}s" fill="freeze"/></rect></g>`;
+}).join("");
 
 const benchRows = BENCH.map((name, i) => {
-  const y = 292 + i * 24;
-  return `<g class="rise" style="animation-delay:${(0.95 + i * 0.1).toFixed(2)}s"><path class="tick" style="animation-delay:${(1.0 + i * 0.1).toFixed(2)}s" d="M48 ${y - 4} l5 6 l10 -13"/>
-  <text x="72" y="${y}" class="mono ink2" font-size="12.5">${name}</text></g>`;
-}).join("\n");
+  const y = 104 + i * 24;
+  return `<g><path class="tick" d="M474 ${y - 4} l5 6 l10 -13"/>
+  <text x="498" y="${y}" class="mono ink2" font-size="12.5">${name}</text></g>`;
+}).join("");
 
 writePlate(
   "assets/card.svg",
   svg({
-    w: 440,
-    h: 400,
-    label: "stack and tooling index card",
+    w: CW_,
+    h: CH_,
+    label: "what i build with",
     css: cardCss,
-    body: `${sheet(440, 400, "s")}
-<text x="46" y="34" class="mono ink" font-size="16" font-weight="700">stack &amp; tooling</text>
-<path class="u" d="M46 42 H188"/>
-<text x="336" y="34" class="mono pen" font-size="11">fig. 4</text>
+    body: `${sheet(CW_, CH_, "s")}
+<text x="46" y="34" class="mono ink" font-size="16" font-weight="700">what i build with</text>
+<path class="u" d="M46 42 H236"/>
+<text x="838" y="34" class="mono pen" font-size="11">fig. 4</text>
+<text x="46" y="58" class="mono ink2" font-size="11.5">everything on this page, not any one project</text>
 ${stackRows}
-<line x1="46" y1="252" x2="394" y2="252" class="gm" stroke-dasharray="4 4"/>
-<text x="46" y="274" class="mono ink" font-size="13" font-weight="700">also on the bench</text>
+<line x1="440" y1="70" x2="440" y2="212" class="gm"/>
+<text x="470" y="82" class="mono ink" font-size="13" font-weight="700">also on the bench</text>
 ${benchRows}`,
   })
 );
-
-console.log("wrote assets/header.svg, games.svg, logos.svg, card.svg");
 
 /* ------------------------------------------------------ icd crosswalk plate */
 // the point of the project, not the leaderboard: an old code goes in, the model
@@ -361,11 +334,9 @@ const xwCss = `
   .arrow{fill:none;stroke:var(--accent);stroke-width:1.8;stroke-linecap:round}
   .dot{fill:var(--pencil)}
   @keyframes drift{0%,100%{transform:translate(0,0)}50%{transform:translate(2px,-3px)}}
-  @media (prefers-reduced-motion:no-preference){
-    .v1{animation:drift 4s ease-in-out infinite}
-    .v2{animation:drift 4s ease-in-out .6s infinite}
-    .v3{animation:drift 4s ease-in-out 1.2s infinite}
-  }
+  .v1{animation:drift 4s ease-in-out infinite}
+  .v2{animation:drift 4s ease-in-out .6s infinite}
+  .v3{animation:drift 4s ease-in-out 1.2s infinite}
 `;
 
 const arrowDown = (y) =>
@@ -383,6 +354,7 @@ writePlate(
 <path class="u" d="M26 40 H176"/>
 <text x="392" y="32" class="mono pen" font-size="11">fig. 5</text>
 <text x="26" y="56" class="mono ink2" font-size="10.5">matches retired diagnosis codes to current ones</text>
+<text x="26" y="70" class="mono pen" font-size="9.5">university of manitoba &#183; centre for healthcare innovation</text>
 
 <rect x="140" y="76" width="160" height="36" rx="5" class="chip"/>
 <text x="220" y="100" text-anchor="middle" class="mono ink" font-size="16" font-weight="700">250.00</text>
@@ -405,7 +377,7 @@ ${arrowDown(284)}
 <rect x="140" y="322" width="160" height="36" rx="5" class="chipa"/>
 <text x="220" y="346" text-anchor="middle" class="mono acc" font-size="16" font-weight="700">E11.9</text>
 <text x="220" y="374" text-anchor="middle" class="mono ink2" font-size="10.5">icd-10-ca, type 2 diabetes</text>
-<text x="220" y="390" text-anchor="middle" class="mono pen" font-size="9.5">a clinical coder does this by hand, one at a time</text>`,
+<text x="220" y="386" text-anchor="middle" class="mono pen" font-size="9.5">a clinical coder does this by hand, one at a time</text>`,
   })
 );
 
@@ -456,4 +428,4 @@ mark("physics", "dynamics sandbox", `<line x1="26" y1="72" x2="76" y2="72" strok
 <path d="M52 26 L64 24 L62 36" fill="none" stroke="var(--accent)" stroke-width="3.6" stroke-linejoin="round" stroke-linecap="round"/>
 <circle cx="34" cy="66" r="5" fill="var(--ink)"/>`);
 
-console.log("wrote assets/projects/*.svg and assets/crosswalk.svg");
+console.log("wrote header, games, logos, card, crosswalk and the project marks");

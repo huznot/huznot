@@ -1,8 +1,8 @@
 // mosi.svg is drawn by hand and keeps its own local classes, so this only swaps
 // the two `svg{--var:...}` palette declarations for the shared ones and leaves the
 // rest of its <style> block alone. it also moves mosi's two intro animations
-// behind a reduced-motion query, for the reason explained in theme.mjs.
-import { readFileSync, writeFileSync } from "node:fs";
+// which start at invisible, for the reason explained in theme.mjs.
+import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { THEME } from "./theme.mjs";
 
 const pick = (mode) => {
@@ -35,9 +35,15 @@ for (const file of ["assets/mosi.svg"]) {
     process.exit(1);
   }
 
+  src = src.replace("gaps flagged, not filled", "gaps flagged");
   src = src.replace(OLD_U, ".u{fill:none;stroke:var(--accent);stroke-width:2}");
   src = src.replace(OLD_ROW, GUARDED);
 
   writeFileSync(file, src);
+  // same two file trick as writePlate in theme.mjs: the readme pairs them with
+  // <picture> because github mobile ignores the query inside the svg
+  const pinned = src.match(/prefers-color-scheme:dark\)\s*\{\s*svg\{([^}]*)\}/);
+  mkdirSync("assets/dark", { recursive: true });
+  writeFileSync("assets/dark/mosi.svg", src.replace("</style>", `svg{${pinned[1]}}</style>`));
   console.log(`rethemed ${file}`);
 }

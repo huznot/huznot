@@ -6,7 +6,7 @@
 // locally with just:  node scripts/generate-stats.mjs
 
 import { mkdirSync } from "node:fs";
-import { THEME, sheet, esc, countUp, writePlate, COUNTUP_CSS } from "./theme.mjs";
+import { THEME, sheet, esc, countUp, writePlate } from "./theme.mjs";
 
 mkdirSync("assets", { recursive: true });
 
@@ -25,7 +25,7 @@ query($login:String!){
       totalIssueContributions totalRepositoryContributions
       contributionCalendar{ totalContributions weeks{ contributionDays{ date contributionCount weekday } } }
     }`).join("\n    ")}
-    repositories(first:100, ownerAffiliations:OWNER, isFork:false, privacy:null, orderBy:{field:PUSHED_AT,direction:DESC}){
+    repositories(first:100, ownerAffiliations:OWNER, isFork:false, orderBy:{field:PUSHED_AT,direction:DESC}){
       totalCount
       nodes{ name isPrivate stargazerCount languages(first:10, orderBy:{field:SIZE,direction:DESC}){ edges{ size node{ name } } } }
     }
@@ -101,22 +101,34 @@ async function scrapeYear(year) {
   return days;
 }
 
+// unauthenticated rest calls get 60 an hour, and this fallback burns one per
+// repo, so say so plainly instead of failing on `.filter is not a function`
+const rest = async (url) => {
+  const res = await fetch(url, { headers: UA });
+  const body = await res.json();
+  if (!res.ok) {
+    throw new Error(
+      res.status === 403 || res.status === 429
+        ? `github rate limited this machine. wait for the reset or set GH_TOKEN.`
+        : `${url} returned ${res.status}: ${body.message || ""}`
+    );
+  }
+  return body;
+};
+
 async function viaPublic() {
-  const created = await fetch(`https://api.github.com/users/${LOGIN}`, { headers: UA })
-    .then((r) => r.json())
-    .then((u) => new Date(u.created_at).getUTCFullYear());
+  const created = new Date((await rest(`https://api.github.com/users/${LOGIN}`)).created_at).getUTCFullYear();
   const thisYear = new Date().getUTCFullYear();
   const days = [];
   for (let y = created; y <= thisYear; y++) days.push(...(await scrapeYear(y)));
   days.sort((a, b) => a.date.localeCompare(b.date));
 
-  const repoList = await fetch(
-    `https://api.github.com/users/${LOGIN}/repos?per_page=100&type=owner&sort=pushed`,
-    { headers: UA }
-  ).then((r) => r.json());
+  const repoList = await rest(
+    `https://api.github.com/users/${LOGIN}/repos?per_page=100&type=owner&sort=pushed`
+  );
   const repos = [];
   for (const r of repoList.filter((r) => !r.fork)) {
-    const langs = await fetch(r.languages_url, { headers: UA }).then((x) => x.json());
+    const langs = await rest(r.languages_url);
     repos.push({
       name: r.name,
       isPrivate: false,
@@ -222,7 +234,6 @@ const cells = weeks
       .map((d) => {
         const lv = level(d.contributionCount);
         const x = X0 + wi * STEP, y = Y0 + d.weekday * STEP;
-        const delay = (0.25 + wi * 0.012).toFixed(3);
         const base = `class="cell" style="animation-delay:${delay}s" x="${x}" y="${y}" width="${CELL}" height="${CELL}" rx="2"`;
         return lv === 0
           ? `<rect ${base} fill="var(--major)" fill-opacity=".55"/>`
@@ -258,7 +269,7 @@ writePlate(
     w: W,
     h: H,
     label: `contribution log, ${yearTotal} contributions in the last twelve months`,
-    css: `@media (prefers-reduced-motion:no-preference){.cell{opacity:0;animation:fade .5s ease-out forwards}}`,
+    css: ``,
     body: `${sheet(W, H, "c")}
 <text x="46" y="34" class="mono ink" font-size="16" font-weight="700">the log &#183; last 12 months</text>
 <path class="u" d="M46 42 H300"/>
@@ -288,13 +299,8 @@ writePlate(
     w: SW,
     h: SH,
     label: `${data.totals.contributions} contributions total, ${current.len} day current streak, ${longest.len} day longest streak`,
-    css: `${COUNTUP_CSS}
-          .rtrack{fill:none;stroke:var(--major);stroke-width:6}
-          .ring{fill:none;stroke:var(--accent);stroke-width:6;stroke-linecap:round}
-          @keyframes sweepring{from{stroke-dashoffset:${(C * frac).toFixed(1)}}to{stroke-dashoffset:0}}
-          @media (prefers-reduced-motion:no-preference){
-            .ring{animation:sweepring 1.2s cubic-bezier(.2,.7,.3,1) .3s both}
-          }`,
+    css: `          .rtrack{fill:none;stroke:var(--major);stroke-width:6}
+          .ring{fill:none;stroke:var(--accent);stroke-width:6;stroke-linecap:round}`,
     body: `${sheet(SW, SH, "k", { margin: 0 })}
 <text x="26" y="32" class="mono ink" font-size="15" font-weight="700">still showing up</text>
 <path class="u" d="M26 40 H228"/>
@@ -383,7 +389,6 @@ writePlate(
     w: TW,
     h: TH,
     label: tally.map(([l, v]) => `${v} ${l}`).join(", "),
-    css: COUNTUP_CSS,
     body: `${sheet(TW, TH, "t")}
 ${tiles}`,
   })

@@ -30,7 +30,10 @@
      machine with animations turned off, which leaves that content hidden for
      good. so intro animations are gone and only looping decoration is left,
      since a paused loop just sits on its first frame and still looks right. */
-</style>
+svg{--paper:#0d1117;--grid:#151b23;--major:#21262d;--rule:#30363d;
+        --ink:#f0f6fc;--ink2:#9198a1;--pencil:#6e7681;--margin:#4a2f1d;
+        --accent:#f0883e;--blue:#4493f8;--green:#3fb950;--purple:#ab7df8;
+        --chip:#f6f8fa;--chipline:#30363d;--bar:#7d8590;--base:#6e7681;--wire:#30363d}</style>
 <rect width="96" height="96" rx="18" fill="var(--major)" fill-opacity=".55"/>
 <path d="M22 38 L48 22 L74 38" fill="none" stroke="var(--ink)" stroke-width="3.4" stroke-linejoin="round"/>
 <line x1="20" y1="72" x2="76" y2="72" stroke="var(--ink)" stroke-width="3.4" stroke-linecap="round"/>

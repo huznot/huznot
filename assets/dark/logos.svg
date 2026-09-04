@@ -35,7 +35,10 @@
   @media (prefers-color-scheme:dark){.mark{filter:invert(1);opacity:.8}}
   @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-1330px)}}
   .track{animation:marquee 39s linear infinite}
-</style>
+svg{--paper:#0d1117;--grid:#151b23;--major:#21262d;--rule:#30363d;
+        --ink:#f0f6fc;--ink2:#9198a1;--pencil:#6e7681;--margin:#4a2f1d;
+        --accent:#f0883e;--blue:#4493f8;--green:#3fb950;--purple:#ab7df8;
+        --chip:#f6f8fa;--chipline:#30363d;--bar:#7d8590;--base:#6e7681;--wire:#30363d}</style>
 <defs>
   <clipPath id="strip"><rect x="1" y="52" width="898" height="60"/></clipPath>
   <g id="row">

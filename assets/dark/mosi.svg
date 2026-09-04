@@ -39,7 +39,7 @@
   }
   .gauge{fill:var(--accent);opacity:.85}
   .track{fill:var(--major);opacity:.4}
-</style>
+svg{--paper:#0d1117;--grid:#151b23;--major:#21262d;--rule:#30363d;--ink:#f0f6fc;--ink2:#9198a1;--pencil:#6e7681;--margin:#4a2f1d;--accent:#f0883e;--blue:#4493f8;--green:#3fb950;--purple:#ab7df8;--chip:#f6f8fa;--chipline:#30363d;--bar:#7d8590;--base:#6e7681;--wire:#30363d}</style>
 <defs>
   <pattern id="f4" width="18" height="18" patternUnits="userSpaceOnUse"><path d="M18 0H0V18" class="gl" fill="none"/></pattern>
   <pattern id="b4" width="90" height="90" patternUnits="userSpaceOnUse"><path d="M90 0H0V90" class="gm" fill="none"/></pattern>

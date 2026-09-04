@@ -22,21 +22,14 @@
   .hand{font-family:"Segoe Print","Bradley Hand","Comic Sans MS",cursive}
   @keyframes dr{to{stroke-dashoffset:0}}
   @keyframes fade{to{opacity:1}}
-  @keyframes rise{to{opacity:1;transform:translateY(0)}}
   .u{fill:none;stroke:var(--accent);stroke-width:2}
-  .d1{animation-delay:.35s}.d2{animation-delay:.5s}.d3{animation-delay:.65s}
-  .d4{animation-delay:.8s}.d5{animation-delay:.95s}.d6{animation-delay:1.1s}
 
-  /* every intro animation lives in here on purpose. an svg used as an image has
-     its animations paused when the reader asks for reduced motion, and a paused
-     animation never reaches its end state, so anything starting at opacity 0
-     would just stay invisible. resting state is the finished state, motion is
-     only ever added on top. note for later: this is a style block inside xml,
-     so no angle brackets in here or the whole file stops parsing. */
-  @media (prefers-reduced-motion:no-preference){
-    .u{stroke-dasharray:260;stroke-dashoffset:260;animation:dr .9s ease-out .2s forwards}
-    .rise{opacity:0;transform:translateY(6px);animation:rise .5s ease-out forwards}
-  }
+  /* nothing on these plates is allowed to start invisible and animate itself in.
+     an svg used as an image reports prefers-reduced-motion as no-preference and
+     then declines to run the animation anyway, on github mobile and on any
+     machine with animations turned off, which leaves that content hidden for
+     good. so intro animations are gone and only looping decoration is left,
+     since a paused loop just sits on its first frame and still looks right. */
 </style>
 <rect width="96" height="96" rx="18" fill="var(--major)" fill-opacity=".55"/>
 <circle cx="48" cy="48" r="24" fill="none" stroke="var(--accent)" stroke-width="3.6"/>
