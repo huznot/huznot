@@ -50,7 +50,7 @@ svg{--paper:#0d1117;--grid:#151b23;--major:#21262d;--rule:#30363d;
 <text x="46" y="58" class="mono pen" font-size="10">by bytes, across 52 repos</text>
 <text x="46" y="88" class="mono ink2" font-size="12">c#</text>
 <rect x="176" y="80" width="200" height="8" rx="4" fill="var(--major)" fill-opacity=".7"/>
-<rect x="176" y="80" width="92.5" height="8" rx="4" fill="var(--accent)" fill-opacity=".9"><animate attributeName="width" from="0" to="92.5" dur=".9s" begin="0.30s" fill="freeze"/></rect>
+<rect x="176" y="80" width="92.4" height="8" rx="4" fill="var(--accent)" fill-opacity=".9"><animate attributeName="width" from="0" to="92.4" dur=".9s" begin="0.30s" fill="freeze"/></rect>
 <text x="394" y="88" text-anchor="end" class="mono pen" font-size="10.5">46.2%</text>
 <text x="46" y="114" class="mono ink2" font-size="12">javascript</text>
 <rect x="176" y="106" width="200" height="8" rx="4" fill="var(--major)" fill-opacity=".7"/>
@@ -63,7 +63,7 @@ svg{--paper:#0d1117;--grid:#151b23;--major:#21262d;--rule:#30363d;
 <text x="46" y="166" class="mono ink2" font-size="12">html</text>
 <rect x="176" y="158" width="200" height="8" rx="4" fill="var(--major)" fill-opacity=".7"/>
 <rect x="176" y="158" width="20.3" height="8" rx="4" fill="var(--accent)" fill-opacity=".9"><animate attributeName="width" from="0" to="20.3" dur=".9s" begin="0.60s" fill="freeze"/></rect>
-<text x="394" y="166" text-anchor="end" class="mono pen" font-size="10.5">10.2%</text>
+<text x="394" y="166" text-anchor="end" class="mono pen" font-size="10.5">10.1%</text>
 <text x="46" y="192" class="mono ink2" font-size="12">css</text>
 <rect x="176" y="184" width="200" height="8" rx="4" fill="var(--major)" fill-opacity=".7"/>
 <rect x="176" y="184" width="9.9" height="8" rx="4" fill="var(--accent)" fill-opacity=".9"><animate attributeName="width" from="0" to="9.9" dur=".9s" begin="0.70s" fill="freeze"/></rect>
